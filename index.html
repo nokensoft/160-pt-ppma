@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pt-PPMA Papua - Pengkajian & Pemberdayaan Masyarakat Adat</title>
+    <title>PPMA Papua - Pengkajian & Pemberdayaan Masyarakat Adat</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +19,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a1a1a', 
+                        primary: '#1a1a1a',
                         secondary: '#15803d',
                         surface: '#ffffff',
                         accent: '#f3f4f6'
                     },
-                    // 3. Daftarkan Font di Konfigurasi Tailwind
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
                     },
@@ -36,16 +35,15 @@
         }
     </script>
     <style>
-        /* 4. Paksa Body Menggunakan Font Sans yang Baru */
         body { 
             font-family: "Plus Jakarta Sans", sans-serif;
             font-size: 14px; 
-            letter-spacing: -0.01em; /* Tipografi modern biasanya sedikit lebih rapat */
+            letter-spacing: -0.01em;
         }
         .no-rounded { border-radius: 0 !important; }
     </style>
 </head>
-<body class="bg-white text-primary antialiased" x-data="{ mobileMenu: false, showModal: true }">
+<body class="bg-white text-primary antialiased" x-data="{ mobileMenu: false, showModal: true, activeTab: 'semua' }">
 
     <div class="bg-primary text-white py-2 px-4 text-center text-xs tracking-wide">
         <p>DISCLAIMER: Draft desain penawaran berdasarkan hasil analisa tim pengembang. | Powered by <a href="https://nokensoft.com" class="underline font-bold">Nokensoft.com</a></p>
@@ -55,7 +53,7 @@
         <div class="bg-white p-8 max-w-md w-full shadow-2xl no-rounded border-t-4 border-primary">
             <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Draft Penawaran Digital</h3>
             <p class="text-gray-600 mb-6 leading-relaxed">
-                Ini merupakan draft desain penawaran yang dibuat berdasarkan analisa kebutuhan digital untuk <strong>Pt-PPMA Papua</strong> dalam rangka penguatan kapasitas informasi masyarakat adat.
+                Ini merupakan draft desain penawaran yang dibuat berdasarkan analisa kebutuhan digital untuk <strong>PPMA Papua</strong> dalam rangka penguatan kapasitas informasi masyarakat adat.
             </p>
             <button @click="showModal = false" class="w-full bg-primary text-white py-3 font-semibold no-rounded hover:bg-gray-800 transition">
                 SAYA MENGERTI
@@ -64,112 +62,249 @@
         </div>
     </div>
 
+    <!-- HEADER -->
     <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-100">
-        
-      
-      
-      <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
-        <div class="flex items-center justify-between w-full md:w-auto">
-            <div class="flex items-center gap-4 flex-1 md:flex-none">
-                <img src="./img/logo-pt-ppma-papua.png" 
-                    alt="Logo Pt-PPMA" 
-                    class="h-14 md:h-20 w-auto object-contain transition-all duration-300">
-                
-                <div class="flex flex-col justify-center">
-                    <span class="font-black tracking-tighter text-xl md:text-2xl uppercase leading-none border-l-2 border-primary pl-4">
-                        Pt-PPMA<br class="hidden md:block"> PAPUA
-                    </span>
+        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <div class="flex items-center gap-4 flex-1 md:flex-none">
+                    <img src="./img/logo-pt-PPMA-papua.png" 
+                        alt="Logo PPMA" 
+                        class="h-14 md:h-20 w-auto object-contain transition-all duration-300">
+                    <div class="flex flex-col justify-center">
+                        <span class="font-black tracking-tighter text-xl md:text-2xl uppercase leading-none border-l-2 border-primary pl-4">
+                            PPMA<br class="hidden md:block"> PAPUA
+                        </span>
+                    </div>
                 </div>
+                <button @click="mobileMenu = !mobileMenu" 
+                        class="md:hidden text-2xl p-2 focus:outline-none transition-transform duration-300 hover:text-secondary" 
+                        :class="mobileMenu ? 'rotate-90' : ''">
+                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars-staggered'"></i>
+                </button>
             </div>
-            
-            <button @click="mobileMenu = !mobileMenu" 
-                    class="md:hidden text-2xl p-2 focus:outline-none transition-transform duration-300 hover:text-secondary" 
-                    :class="mobileMenu ? 'rotate-90' : ''">
-                <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars-staggered'"></i>
-            </button>
-        </div>
 
-        <ul :class="mobileMenu ? 'flex' : 'hidden'" 
-            class="flex-col md:flex md:flex-row gap-y-4 md:gap-x-6 mt-6 md:mt-0 font-bold uppercase tracking-[0.15em] text-[11px] border-t md:border-t-0 border-gray-100 pt-6 md:pt-0">
-            
-            <li><a href="#hero" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Beranda</a></li>
-            
-            <li><a href="#features" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Pilar Kerja</a></li>
-            
-            <li><a href="#infographic" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Alur</a></li>
-            
-            <li><a href="#gallery" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Galeri</a></li>
-            
-            <li><a href="#articles" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Warta</a></li>
-            
-            <li><a href="#partners" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Jaringan</a></li>
-            
-            <li>
-                <a href="#contact-v2" 
-                class="bg-primary text-white md:bg-transparent md:text-primary md:border-b-2 md:border-primary px-4 py-3 md:px-0 md:py-1 hover:bg-secondary md:hover:bg-transparent md:hover:text-secondary md:hover:border-secondary transition block text-center" 
-                @click="mobileMenu = false">
-                    Hubungi
-                </a>
-            </li>
-        </ul>
-    </nav>
-      
-      
-      
+            <ul :class="mobileMenu ? 'flex' : 'hidden'" 
+                class="flex-col md:flex md:flex-row gap-y-4 md:gap-x-6 mt-6 md:mt-0 font-bold uppercase tracking-[0.15em] text-[11px] border-t md:border-t-0 border-gray-100 pt-6 md:pt-0">
+                <li><a href="#hero" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Beranda</a></li>
+                <li><a href="#tentang" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Tentang</a></li>
+                <li><a href="#features" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Pilar Kerja</a></li>
+                <li><a href="#infographic" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Alur</a></li>
+                <li><a href="#wilayah" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Wilayah</a></li>
+                <li><a href="#gallery" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Galeri</a></li>
+                <li><a href="#articles" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Warta</a></li>
+                <li><a href="#partners" class="hover:text-secondary transition block py-2 md:py-0" @click="mobileMenu = false">Jaringan</a></li>
+                <li>
+                    <a href="#contact-v2" 
+                    class="bg-primary text-white md:bg-transparent md:text-primary md:border-b-2 md:border-primary px-4 py-3 md:px-0 md:py-1 hover:bg-secondary md:hover:bg-transparent md:hover:text-secondary md:hover:border-secondary transition block text-center" 
+                    @click="mobileMenu = false">
+                        Hubungi
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
+
+        <!-- ============ HERO ============ -->
         <section id="hero" class="container mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <span class="inline-block py-1 px-3 bg-gray-100 text-[11px] font-bold tracking-widest uppercase">Kedaulatan Masyarakat Adat</span>
+                <span class="inline-block py-1 px-3 bg-gray-100 text-[11px] font-bold tracking-widest uppercase">Kedaulatan Masyarakat Adat Papua</span>
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight">Berdaya di Tanah Sendiri.</h1>
-                <p class="text-gray-500 text-lg max-w-md">Mendorong pengakuan hak ulayat dan pengelolaan sumber daya alam berbasis kearifan lokal melalui penguatan kapasitas digital dan hukum.</p>
-                <div class="flex gap-4">
+                <p class="text-gray-500 text-lg max-w-md">Mendorong rekonsiliasi hubungan manusia, Tuhan, dan alam semesta Papua untuk kehidupan yang berdaulat dan berkelanjutan hingga Tahun 2040.</p>
+                <div class="flex gap-4 flex-wrap">
                     <a href="#features" class="bg-primary text-white px-8 py-4 no-rounded font-bold shadow-lg hover:shadow-none transition-all">Program Kami</a>
-                    <a href="https://ptppm-papua.org/" target="_blank" class="border border-gray-200 px-8 py-4 no-rounded font-bold hover:bg-gray-50 transition">Website Resmi</a>
+                    <a href="http://www.ptppma.or.id/" target="_blank" class="border border-gray-200 px-8 py-4 no-rounded font-bold hover:bg-gray-50 transition">Website Resmi</a>
+                </div>
+                <!-- Quick stats -->
+                <div class="flex gap-8 pt-4 border-t border-gray-100">
+                    <div>
+                        <p class="text-2xl font-black text-secondary">1988</p>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Tahun Berdiri</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-secondary">3+</p>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Wilayah Kerja</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-secondary">5</p>
+                        <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Pilar Program</p>
+                    </div>
                 </div>
             </div>
             <div class="relative">
-                <!-- <img src="https://placehold.co/600x400/EEE/31343C" class="shadow-xl no-rounded w-full" alt="Pemetaan Wilayah Adat"> -->
-                <img src="./img/ilustrasi-1.jpg" class="shadow-xl no-rounded w-full" alt="Pemetaan Wilayah Adat">
+                <img src="./img/ilustrasi-1.jpg" class="shadow-xl no-rounded w-full" alt="Pemetaan Wilayah Adat Papua">
+                <div class="absolute -bottom-4 -left-4 bg-secondary text-white p-4 no-rounded shadow-xl max-w-[200px]">
+                    <p class="text-[10px] uppercase font-bold tracking-widest">Visi 2040</p>
+                    <p class="text-xs mt-1 leading-relaxed">Masyarakat Adat Papua yang Berdaulat dan Berkelanjutan</p>
+                </div>
             </div>
         </section>
 
+        <!-- ============ TENTANG PPMA ============ -->
+        <section id="tentang" class="bg-primary text-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Tentang Kami</span>
+                        <h2 class="text-3xl font-bold mt-3 mb-6 uppercase tracking-tight">Siapa PPMA Papua?</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat (Pt. PPMA) Papua adalah bagian dari Civil Society Organisation (CSO) yang bergerak di bidang pengorganisasian dan penguatan masyarakat adat, berkaitan dengan kepastian hak dan ruang hidupnya untuk kemandirian dan kesejahteraannya.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-8">
+                            Didirikan pada tahun 1988 dengan nama Yayasan Pendidikan Hukum Masyarakat Adat (YKPHMA) Irian Jaya, oleh Ibu Maria Ruwiastuti, Zadrak Wamebu, Dr. Loupaty, dan beberapa pendiri lainnya — sebagai respons atas kondisi HAM masyarakat adat yang semakin tertindas di Papua.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border border-white/10 p-4 no-rounded">
+                                <p class="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-1">Akta Pendirian</p>
+                                <p class="font-bold">31 Oktober 1997</p>
+                                <p class="text-xs text-gray-400">No. Pendaftaran 188</p>
+                            </div>
+                            <div class="border border-white/10 p-4 no-rounded">
+                                <p class="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-1">Akta Terakhir</p>
+                                <p class="font-bold">22 Mei 2018</p>
+                                <p class="text-xs text-gray-400">No. Pendaftaran 16</p>
+                            </div>
+                            <div class="border border-white/10 p-4 no-rounded">
+                                <p class="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-1">NPWP</p>
+                                <p class="font-bold">02.667.865.6-952.000</p>
+                            </div>
+                            <div class="border border-white/10 p-4 no-rounded">
+                                <p class="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-1">Periode Kerja</p>
+                                <p class="font-bold">2020 – 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Visi -->
+                        <div class="border-l-4 border-secondary pl-6 py-2">
+                            <p class="text-[10px] uppercase font-bold tracking-widest text-secondary mb-3">Visi Organisasi</p>
+                            <p class="text-gray-200 leading-relaxed font-medium">
+                                "Terwujudnya Masyarakat Adat Papua Yang Mampu Mengorganisir Diri Dan Merekonsiliasi Hubungan Dengan Tuhan Dan Alam Semesta Papua Untuk Kehidupan Yang Berdaulat Dan Berkelanjutan Dalam Berbagai Aspek Kehidupan Di Tahun 2040"
+                            </p>
+                        </div>
+                        <!-- Nilai -->
+                        <div>
+                            <p class="text-[10px] uppercase font-bold tracking-widest text-secondary mb-4">Tata Nilai</p>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-eye text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Transparansi</p>
+                                </div>
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-person-booth text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Demokrasi</p>
+                                </div>
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-venus-mars text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Kesetaraan Gender</p>
+                                </div>
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-people-group text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Partisipasi</p>
+                                </div>
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-arrows-spin text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Keberlanjutan</p>
+                                </div>
+                                <div class="bg-white/5 p-3 no-rounded text-center hover:bg-secondary/20 transition">
+                                    <i class="fa-solid fa-leaf text-secondary mb-2 block text-lg"></i>
+                                    <p class="text-[10px] uppercase font-bold tracking-wider">Kelestarian</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PILAR PROGRAM ============ -->
         <section id="features" class="bg-accent py-20">
             <div class="container mx-auto px-6">
                 <div class="mb-16 text-center">
-                    <h2 class="text-3xl font-bold mb-4 uppercase">Pilar Utama Pt-PPMA</h2>
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Program Strategis</span>
+                    <h2 class="text-3xl font-bold mt-3 mb-4 uppercase">5 Pilar Utama PPMA</h2>
                     <div class="h-1 w-20 bg-primary mx-auto"></div>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Setiap pilar dirancang untuk memperkuat posisi dan hak masyarakat adat di 7 wilayah adat Tanah Papua.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition">
-                        <i class="fa-solid fa-map-location-dot text-3xl mb-6 text-secondary"></i>
-                        <h3 class="text-xl font-bold mb-4 uppercase">Pemetaan Adat</h3>
-                        <p class="text-gray-600">Pemetaan partisipatif menggunakan GIS untuk legalitas hak tenurial hutan adat di Tanah Papua.</p>
+                    <!-- PMA -->
+                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition group">
+                        <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                            <i class="fa-solid fa-map-location-dot text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PMA</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Masyarakat Adat</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Pengorganisasian MA, penguatan kelembagaan adat, pendidikan dan pelatihan, pemetaan wilayah adat, kajian sosial budaya, survey potensi ekonomi, dan perencanaan wilayah berbasis kearifan lokal.</p>
                     </div>
-                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition">
-                        <i class="fa-solid fa-scale-balanced text-3xl mb-6 text-secondary"></i>
-                        <h3 class="text-xl font-bold mb-4 uppercase">Advokasi Hukum</h3>
-                        <p class="text-gray-600">Inisiasi Raperda dan kebijakan publik yang melindungi eksistensi dan hak dasar masyarakat adat.</p>
+                    <!-- KPP -->
+                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition group">
+                        <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                            <i class="fa-solid fa-scale-balanced text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">KPP</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase">Kajian Pendidikan Publik</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Kajian perundang-undangan, pendataan investasi, survey & investigasi konflik, membangun sistem informasi data, pengembangan media dan jaringan, kampanye advokasi, dan mendorong kebijakan daerah pelindung hak adat.</p>
                     </div>
-                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition">
-                        <i class="fa-solid fa-users-gear text-3xl mb-6 text-secondary"></i>
-                        <h3 class="text-xl font-bold mb-4 uppercase">Pemberdayaan</h3>
-                        <p class="text-gray-600">Pengembangan ekonomi mandiri dan literasi untuk kader muda di tingkat kampung.</p>
+                    <!-- PEMA -->
+                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition group">
+                        <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                            <i class="fa-solid fa-seedling text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PEMA</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase">Pengembangan Ekonomi MA</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Penataan kelembagaan ekonomi, pengembangan sumber potensi ekonomi, pelatihan keterampilan usaha dan desain produk, pengurusan perijinan usaha, serta pengembangan jaringan pemasaran.</p>
+                    </div>
+                    <!-- PPA -->
+                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition group">
+                        <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                            <i class="fa-solid fa-users-gear text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PPA</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Perempuan Adat</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Pemberdayaan kelompok perempuan melalui organisasi perempuan, pendidikan dan pelatihan gender, peningkatan kapasitas, memperkuat partisipasi perempuan dalam ruang publik, dan menjaga generasi masa depan Papua.</p>
+                    </div>
+                    <!-- PISD -->
+                    <div class="bg-white p-8 shadow-md no-rounded border-b-4 border-transparent hover:border-secondary transition group md:col-span-2">
+                        <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                            <i class="fa-solid fa-building-circle-check text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PISD</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Institusi & Sumber Daya</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Penguatan kapasitas kelembagaan PPMA melalui peningkatan sumber daya staf, pendataan dan pengelolaan aset, pengefektifan manajemen sistem internal, rapat badan pengurus dan anggota tahunan, laporan berkala, Monev, Fund Raising, dan memastikan keberlanjutan organisasi.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ============ STATISTIK ============ -->
         <section id="stats" class="container mx-auto px-6 py-20">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Efektivitas Advokasi</h2>
-                    <p class="text-gray-600 mb-8">Visualisasi peningkatan jumlah wilayah adat yang terpetakan secara legal selama periode program berjalan.</p>
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Dampak Program</span>
+                    <h2 class="text-3xl font-bold mt-3 mb-6">Efektivitas Advokasi & Pendampingan</h2>
+                    <p class="text-gray-600 mb-8">Visualisasi peningkatan jangkauan dan dampak program pendampingan masyarakat adat selama periode program berjalan di wilayah Papua dan Papua Selatan.</p>
                     <ul class="space-y-4">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Pengakuan Hutan Adat meningkat</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Jangkauan pendampingan di 5 wilayah adat</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-secondary"></i> Literasi hukum masyarakat meningkat</li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                            <span>Pengakuan hutan dan wilayah adat yang terus meningkat di Kab. Jayapura, Sarmi, dan Mappi</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                            <span>Pendampingan aktif di Provinsi Papua dan Papua Selatan</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                            <span>Pemetaan wilayah adat berbasis GIS partisipatif</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                            <span>Penguatan kapasitas perempuan adat dan kader muda di tingkat kampung</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                            <span>Literasi hukum dan advokasi kebijakan daerah berbasis hak masyarakat adat</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="bg-white p-6 shadow-md no-rounded">
@@ -178,387 +313,719 @@
             </div>
         </section>
 
+        <!-- ============ ALUR KERJA ============ -->
+        <section id="infographic" class="bg-accent py-20 border-y border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Alur Kerja & Dampak</span>
+                    <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Transformasi Masyarakat Adat</h2>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Bagaimana kami bekerja berdampingan dengan komunitas untuk memastikan kedaulatan dan keberlanjutan masa depan Papua.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-0 transform -translate-y-1/2"></div>
+                    <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
+                        <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
+                            <i class="fa-solid fa-magnifying-glass-location text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Identifikasi</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Pengkajian mendalam terhadap batas wilayah ulayat, status hukum, dan kondisi sosial budaya masyarakat adat di lapangan.</p>
+                        <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">01</span>
+                    </div>
+                    <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
+                        <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
+                            <i class="fa-solid fa-map-marked-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Pemetaan</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Pemetaan partisipatif menggunakan teknologi GIS untuk mendokumentasikan aset dan batas wilayah adat secara digital dan legal.</p>
+                        <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">02</span>
+                    </div>
+                    <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
+                        <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
+                            <i class="fa-solid fa-gavel text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Advokasi</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Mendorong pengakuan legal melalui kajian kebijakan, regulasi daerah, dan advokasi jaringan agar hak masyarakat adat terlindungi secara konstitusional.</p>
+                        <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">03</span>
+                    </div>
+                    <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
+                        <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
+                            <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Kemandirian</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Pendampingan ekonomi dan penguatan kapasitas agar masyarakat mampu mengelola sumber daya alam secara mandiri dan berkelanjutan.</p>
+                        <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">04</span>
+                    </div>
+                </div>
+
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-gray-200 pt-12">
+                    <div>
+                        <p class="text-3xl font-black text-primary">1988</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Tahun Berdiri</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-primary">3+</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Wilayah Kabupaten</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-primary">15</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Staf & Program Officer</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-primary">5</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Pilar Program Strategis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WILAYAH KERJA ============ -->
+        <section id="wilayah" class="bg-white py-20 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="mb-12 text-center">
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Jangkauan Kerja</span>
+                    <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Wilayah Kerja PPMA</h2>
+                    <div class="h-1 w-20 bg-primary mt-4 mx-auto"></div>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Saat ini PPMA bekerja di Provinsi Papua dan Papua Selatan, mendampingi masyarakat adat dari hulu ke hilir kebijakan.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Jayapura -->
+                    <div class="group border border-gray-100 shadow-md no-rounded hover:shadow-xl transition-shadow overflow-hidden">
+                        <div class="h-3 bg-primary group-hover:bg-secondary transition-colors"></div>
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <p class="text-[9px] font-bold tracking-widest uppercase text-gray-400">Provinsi Papua</p>
+                                    <h3 class="text-xl font-bold mt-1 uppercase">Kab. Jayapura</h3>
+                                </div>
+                                <i class="fa-solid fa-map-pin text-secondary text-xl mt-1"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Wilayah kerja utama dan lokasi kantor pusat PPMA di Buper Waena, Kota Jayapura. Fokus program PMA, KPP, dan PISD dengan konstituen masyarakat adat setempat.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">PMA</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">KPP</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">PISD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sarmi -->
+                    <div class="group border border-gray-100 shadow-md no-rounded hover:shadow-xl transition-shadow overflow-hidden">
+                        <div class="h-3 bg-primary group-hover:bg-secondary transition-colors"></div>
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <p class="text-[9px] font-bold tracking-widest uppercase text-gray-400">Provinsi Papua</p>
+                                    <h3 class="text-xl font-bold mt-1 uppercase">Kab. Sarmi</h3>
+                                </div>
+                                <i class="fa-solid fa-map-pin text-secondary text-xl mt-1"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Wilayah pengorganisasian masyarakat adat pesisir dan pedalaman. Fokus pemetaan wilayah adat berbasis GIS dan penguatan kelembagaan DPMA/LMA di tingkat komunitas.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">PMA</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">GIS</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">Kelembagaan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mappi -->
+                    <div class="group border border-gray-100 shadow-md no-rounded hover:shadow-xl transition-shadow overflow-hidden">
+                        <div class="h-3 bg-primary group-hover:bg-secondary transition-colors"></div>
+                        <div class="p-8">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <p class="text-[9px] font-bold tracking-widest uppercase text-gray-400">Provinsi Papua Selatan</p>
+                                    <h3 class="text-xl font-bold mt-1 uppercase">Kab. Mappi</h3>
+                                </div>
+                                <i class="fa-solid fa-map-pin text-secondary text-xl mt-1"></i>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Wilayah kerja lapangan dengan staf khusus Field Staff Mappi. Fokus pengembangan ekonomi masyarakat adat dan perlindungan hak dasar dalam konteks investasi dan pembangunan.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">PEMA</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">Hak Adat</span>
+                                <span class="bg-accent text-[9px] font-bold uppercase tracking-wider px-2 py-1 no-rounded">Field Work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peta -->
+                <div class="bg-accent p-8 no-rounded border-l-4 border-secondary flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-secondary mb-2">Cakupan Wilayah</p>
+                        <h4 class="text-xl font-bold uppercase mb-1">@ Provinsi Papua — Kab. Jayapura & Sarmi</h4>
+                        <h4 class="text-xl font-bold uppercase">@ Provinsi Papua Selatan — Kab. Mappi</h4>
+                    </div>
+                    <a href="#contact-v2" class="whitespace-nowrap bg-primary text-white px-8 py-4 no-rounded font-bold uppercase tracking-widest text-[11px] hover:bg-secondary transition-colors shadow-lg">
+                        Kolaborasi Wilayah <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ STRUKTUR KEPENGURUSAN ============ -->
+        <section id="pengurus" class="bg-accent py-20 border-t border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="mb-12 text-center">
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Kepengurusan 2020–2025</span>
+                    <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Struktur Organisasi PPMA</h2>
+                    <div class="h-1 w-20 bg-primary mt-4 mx-auto"></div>
+                </div>
+
+                <!-- Badan Pengawas -->
+                <div class="mb-10">
+                    <h3 class="text-[11px] font-bold tracking-widest uppercase text-gray-400 mb-6 text-center">Badan Pengawas (Supervisor)</h3>
+                    <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-2 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-user-shield text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold text-sm">Yoko Yahan Yaku</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota Pengawas</p>
+                        </div>
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-2 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-user-shield text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold text-sm">Nicodemus Yance Wamafma</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota Pengawas</p>
+                        </div>
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-2 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-user-shield text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold text-sm">Amos Soumilena</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota Pengawas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badan Pengurus -->
+                <div class="mb-10">
+                    <h3 class="text-[11px] font-bold tracking-widest uppercase text-gray-400 mb-6 text-center">Badan Pengurus (Board of Directors)</h3>
+                    <div class="grid md:grid-cols-4 gap-5">
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-4 border-secondary">
+                            <div class="w-14 h-14 bg-secondary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-crown text-secondary text-xl"></i>
+                            </div>
+                            <p class="font-bold">Zadrak Wamebu</p>
+                            <p class="text-[10px] uppercase tracking-widest text-secondary font-bold mt-1">Ketua</p>
+                            <p class="text-[9px] text-gray-400 mt-1">Chairman</p>
+                        </div>
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-4 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-user-tie text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold">Robert Mandosir</p>
+                            <p class="text-[10px] uppercase tracking-widest text-primary font-bold mt-1">Wakil Ketua</p>
+                        </div>
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-4 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-user-pen text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold">Naomi Marasian, SE</p>
+                            <p class="text-[10px] uppercase tracking-widest text-primary font-bold mt-1">Sekretaris</p>
+                            <p class="text-[9px] text-gray-400 mt-1">/ Direktur Eksekutif</p>
+                        </div>
+                        <div class="bg-white p-6 shadow-md no-rounded text-center border-t-4 border-primary">
+                            <div class="w-14 h-14 bg-primary/10 mx-auto flex items-center justify-center mb-3 no-rounded">
+                                <i class="fa-solid fa-coins text-primary text-xl"></i>
+                            </div>
+                            <p class="font-bold">Dominggas Nari</p>
+                            <p class="text-[10px] uppercase tracking-widest text-primary font-bold mt-1">Bendahara</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-5 mt-5 max-w-2xl mx-auto">
+                        <div class="bg-white p-5 shadow-md no-rounded text-center border-t-2 border-gray-200">
+                            <p class="font-bold text-sm">Ketrina Yabansabra</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota</p>
+                        </div>
+                        <div class="bg-white p-5 shadow-md no-rounded text-center border-t-2 border-gray-200">
+                            <p class="font-bold text-sm">Johanes Wob</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota</p>
+                        </div>
+                        <div class="bg-white p-5 shadow-md no-rounded text-center border-t-2 border-gray-200">
+                            <p class="font-bold text-sm">Frengky Saa</p>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">Anggota</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tim Pelaksana -->
+                <div>
+                    <h3 class="text-[11px] font-bold tracking-widest uppercase text-gray-400 mb-6 text-center">Tim Pelaksana (Staff)</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-secondary/10 flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-star text-secondary text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Naomi Marasian</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Direktur Eksekutif</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Jacson Umbora</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Program Officer – PMA</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Niko Wamafma</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Program Officer – KPP</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Marselina Wamebu</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Program Officer – PPA</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Daniel Bairam</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Program Officer – PEMA</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Jahya Lorenz</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Kabid Data, Media & Informasi</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Habel Samon</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Office Manager / HRD</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Lince Ebe</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Finance Manager</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Tantri Ninofur</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Finance – Kasir</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Muscorry Kenakaimu</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Field Staff – Mappi</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Obeth Farwas</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Field Staff Pengembangan Ekonomi</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Offni Sibetay</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Staff Pemetaan / GIS</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Benny Marani</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Staff Kajian Sosbud & Ekonomi</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Helena Sarakan</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Staff Perencanaan & Pengembangan MA</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 shadow-sm no-rounded flex items-center gap-4 hover:shadow-md transition">
+                            <div class="w-10 h-10 bg-accent flex items-center justify-center no-rounded flex-shrink-0">
+                                <i class="fa-solid fa-user text-gray-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Noach Yanggu</p>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Logistic & Driver</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KOLABORASI CTA ============ -->
         <section id="contact" class="bg-primary text-white py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold mb-8 uppercase tracking-widest">Mari Berkolaborasi</h2>
-                <p class="mb-8 text-gray-400">Jalin kemitraan untuk penguatan hak-hak masyarakat adat di Tanah Papua.</p>
+                <p class="mb-8 text-gray-400 max-w-xl mx-auto">Jalin kemitraan untuk penguatan hak-hak masyarakat adat di Tanah Papua. Bersama kita wujudkan kedaulatan yang berdampak nyata.</p>
                 <div class="max-w-2xl mx-auto bg-white p-1 shadow-md no-rounded">
                     <form class="flex flex-col md:flex-row">
-                        <input type="email" placeholder="Email Lembaga/Instansi" class="flex-1 p-4 text-primary outline-none">
+                        <input type="email" placeholder="Email Lembaga/Instansi Anda" class="flex-1 p-4 text-primary outline-none">
                         <button class="bg-secondary px-10 py-4 font-bold uppercase tracking-wider hover:bg-opacity-90 transition">Kirim Pesan</button>
                     </form>
                 </div>
-                <p class="mt-8 text-gray-400 text-sm">Jl. Buper, Waena, Distrik Heram, Jayapura.</p>
+                <p class="mt-8 text-gray-400 text-sm">Jl. Pramuka No. 18, Buper Waena, Kota Jayapura, Papua</p>
             </div>
         </section>
-      
-      
-      <section id="articles" class="bg-white py-20 border-t border-gray-100">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div class="max-w-xl">
-                <span class="text-secondary font-bold tracking-widest uppercase text-[11px]">Pusat Informasi</span>
-                <h2 class="text-3xl font-bold mt-2 uppercase">Artikel & Kabar Terbaru</h2>
-                <div class="h-1 w-20 bg-primary mt-4"></div>
-            </div>
-            <a href="#" class="text-primary font-bold uppercase tracking-widest text-[12px] border-b-2 border-primary hover:text-secondary hover:border-secondary transition pb-1">
-                Lihat Semua Artikel <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
-            </a>
-        </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
-            <article class="group cursor-pointer">
-                <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
-                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Hutan Adat" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
-                    <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">
-                        Advokasi
+        <!-- ============ ARTIKEL & BLOG ============ -->
+        <section id="articles" class="bg-white py-20 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div class="max-w-xl">
+                        <span class="text-secondary font-bold tracking-widest uppercase text-[11px]">Pusat Informasi</span>
+                        <h2 class="text-3xl font-bold mt-2 uppercase">Artikel & Kabar Terbaru</h2>
+                        <div class="h-1 w-20 bg-primary mt-4"></div>
                     </div>
-                </div>
-                <div class="space-y-3">
-                    <time class="text-gray-400 text-[11px] uppercase tracking-widest">15 Maret 2026</time>
-                    <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">
-                        Mendorong Pengakuan Hutan Adat di Wilayah Mappi: Langkah Menuju Kedaulatan
-                    </h3>
-                    <p class="text-gray-500 line-clamp-3">
-                        Tim Pt-PPMA melakukan koordinasi intensif dengan pemerintah daerah untuk memfinalisasi draf regulasi pengakuan masyarakat adat...
-                    </p>
-                    <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">
-                        Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i>
+                    <a href="#" class="text-primary font-bold uppercase tracking-widest text-[12px] border-b-2 border-primary hover:text-secondary hover:border-secondary transition pb-1">
+                        Lihat Semua Artikel <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
                     </a>
                 </div>
-            </article>
 
-            <article class="group cursor-pointer">
-                <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
-                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Literasi Digital" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
-                    <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">
-                        Pemberdayaan
+                <!-- Kategori Filter -->
+                <div class="flex flex-wrap gap-2 mb-10" x-data="{ activeTab: 'semua' }">
+                    <button @click="activeTab = 'semua'" :class="activeTab === 'semua' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Semua</button>
+                    <button @click="activeTab = 'advokasi'" :class="activeTab === 'advokasi' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Advokasi</button>
+                    <button @click="activeTab = 'pemberdayaan'" :class="activeTab === 'pemberdayaan' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Masyarakat Adat</button>
+                    <button @click="activeTab = 'ekonomi'" :class="activeTab === 'ekonomi' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Ekonomi Adat</button>
+                    <button @click="activeTab = 'perempuan'" :class="activeTab === 'perempuan' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Perempuan Adat</button>
+                    <button @click="activeTab = 'lingkungan'" :class="activeTab === 'lingkungan' ? 'bg-primary text-white' : 'bg-accent text-gray-600'" class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest no-rounded transition">Lingkungan & Alam</button>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
+                            <img src="https://placehold.co/600x400/EEE/31343C" alt="Hutan Adat Mappi" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                            <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">Advokasi</div>
+                        </div>
+                        <div class="space-y-3">
+                            <time class="text-gray-400 text-[11px] uppercase tracking-widest">15 Maret 2026</time>
+                            <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">Mendorong Pengakuan Hutan Adat di Wilayah Mappi: Langkah Menuju Kedaulatan</h3>
+                            <p class="text-gray-500 line-clamp-3">Tim PPMA melakukan koordinasi intensif dengan pemerintah daerah untuk memfinalisasi draf regulasi pengakuan masyarakat adat dan hak atas wilayah ulayat di Kabupaten Mappi...</p>
+                            <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
+                            <img src="https://placehold.co/600x400/EEE/31343C" alt="Pemetaan GIS" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                            <div class="absolute top-0 left-0 bg-secondary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">Masyarakat Adat</div>
+                        </div>
+                        <div class="space-y-3">
+                            <time class="text-gray-400 text-[11px] uppercase tracking-widest">10 Maret 2026</time>
+                            <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">Pelatihan GIS Partisipatif: Memetakan Masa Depan dari Kampung ke Digital</h3>
+                            <p class="text-gray-500 line-clamp-3">Pemuda adat dari berbagai distrik di Kabupaten Jayapura dan Sarmi berkumpul untuk mempelajari teknik pemetaan satelit guna melindungi batas wilayah ulayat secara digital...</p>
+                            <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="group cursor-pointer">
+                        <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
+                            <img src="https://placehold.co/600x400/EEE/31343C" alt="Ekonomi Adat" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                            <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">Ekonomi Adat</div>
+                        </div>
+                        <div class="space-y-3">
+                            <time class="text-gray-400 text-[11px] uppercase tracking-widest">02 Maret 2026</time>
+                            <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">Pengembangan Komoditas Lokal Unggulan: Potensi Ekonomi Adat Papua Menembus Pasar</h3>
+                            <p class="text-gray-500 line-clamp-3">Melalui program PEMA, pendampingan teknis dan branding produk berbasis kearifan lokal kini mulai diminati oleh pasar nasional dan membuka peluang kemandirian ekonomi kampung adat...</p>
+                            <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ JARINGAN MITRA ============ -->
+        <section id="partners" class="bg-white py-20 border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="mb-12 text-center md:text-left">
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Kolaborasi & Sinergi</span>
+                    <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Jaringan Mitra PPMA</h2>
+                    <div class="h-1 w-20 bg-primary mt-4 mx-auto md:mx-0"></div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70">
+                    <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
+                        <img src="https://placehold.co/200x100/EEE/31343C" alt="AMAN" class="h-12 object-contain mb-3">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">AMAN Nasional</span>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
+                        <img src="https://placehold.co/200x100/EEE/31343C" alt="Kemitraan" class="h-12 object-contain mb-3">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Kemitraan (Partnership)</span>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
+                        <img src="https://placehold.co/200x100/EEE/31343C" alt="JKPP" class="h-12 object-contain mb-3">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">JKPP</span>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
+                        <img src="https://placehold.co/200x100/EEE/31343C" alt="Samdhana Institute" class="h-12 object-contain mb-3">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Samdhana Institute</span>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
+                        <img src="https://placehold.co/200x100/EEE/31343C" alt="Pemerintah Provinsi Papua" class="h-12 object-contain mb-3">
+                        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Pemerintah Provinsi Papua</span>
                     </div>
                 </div>
-                <div class="space-y-3">
-                    <time class="text-gray-400 text-[11px] uppercase tracking-widest">10 Maret 2026</time>
-                    <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">
-                        Pelatihan GIS Partisipatif: Memetakan Masa Depan dari Kampung ke Digital
-                    </h3>
-                    <p class="text-gray-500 line-clamp-3">
-                        Pemuda adat dari berbagai distrik berkumpul di Jayapura untuk mempelajari teknik pemetaan satelit guna melindungi batas wilayah ulayat...
-                    </p>
-                    <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">
-                        Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i>
+
+                <div class="mt-16 bg-accent p-8 md:p-12 no-rounded shadow-md flex flex-col md:flex-row items-center justify-between gap-8 border-l-8 border-secondary">
+                    <div class="max-w-xl">
+                        <h4 class="text-xl font-bold uppercase mb-2">Tertarik Menjadi Mitra Strategis?</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Kami selalu terbuka untuk kolaborasi yang berdampak positif bagi kedaulatan masyarakat adat dan kelestarian alam di Tanah Papua.</p>
+                    </div>
+                    <a href="#contact-v2" class="whitespace-nowrap bg-primary text-white px-8 py-4 no-rounded font-bold uppercase tracking-widest text-[11px] hover:bg-secondary transition-colors shadow-lg">
+                        Jalin Kerja Sama <i class="fa-solid fa-handshake ml-2"></i>
                     </a>
                 </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="group cursor-pointer">
-                <div class="relative overflow-hidden no-rounded bg-gray-100 mb-6 shadow-md">
-                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Ekonomi Mandiri" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
-                    <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">
-                        Ekonomi
+        <!-- ============ GALERI ============ -->
+        <section id="gallery" class="bg-white py-20 border-t border-gray-100" x-data="{ expanded: false }">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div class="max-w-xl">
+                        <span class="text-secondary font-bold tracking-widest uppercase text-[11px]">Dokumentasi Lapangan</span>
+                        <h2 class="text-3xl font-bold mt-2 uppercase tracking-tight">Aktivitas & Jejak Rekam</h2>
+                        <div class="h-1 w-20 bg-primary mt-4"></div>
                     </div>
                 </div>
-                <div class="space-y-3">
-                    <time class="text-gray-400 text-[11px] uppercase tracking-widest">02 Maret 2026</time>
-                    <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition">
-                        Pengembangan Komoditas Lokal Unggulan: Kopi Adat Papua Menembus Pasar
-                    </h3>
-                    <p class="text-gray-500 line-clamp-3">
-                        Melalui pendampingan teknis dan branding, produk kopi hasil budidaya masyarakat adat kini mulai diminati oleh pasar nasional...
-                    </p>
-                    <a href="#" class="inline-block pt-2 font-bold text-[12px] uppercase tracking-wider group-hover:translate-x-2 transition-transform">
-                        Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i>
-                    </a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-      
-      
-      <section id="infographic" class="bg-accent py-20 border-y border-gray-200">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Alur Kerja & Dampak</span>
-            <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Transformasi Masyarakat Adat</h2>
-            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Bagaimana kami bekerja berdampingan dengan komunitas untuk memastikan kedaulatan dan keberlanjutan masa depan Papua.</p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-            <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-0 transform -translate-y-1/2"></div>
-
-            <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
-                <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
-                    <i class="fa-solid fa-magnifying-glass-location text-xl"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Identifikasi</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Melakukan pengkajian mendalam terhadap batas wilayah ulayat dan status hukum masyarakat adat di lapangan.</p>
-                <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">01</span>
-            </div>
-
-            <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
-                <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
-                    <i class="fa-solid fa-map-marked-alt text-xl"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Pemetaan</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Proses pemetaan partisipatif menggunakan teknologi GIS untuk mendokumentasikan aset dan batas wilayah secara digital.</p>
-                <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">02</span>
-            </div>
-
-            <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
-                <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
-                    <i class="fa-solid fa-gavel text-xl"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Advokasi</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Mendorong pengakuan legal melalui regulasi daerah agar hak masyarakat adat terlindungi secara konstitusional.</p>
-                <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">03</span>
-            </div>
-
-            <div class="bg-white p-8 shadow-md no-rounded relative z-10 border-t-4 border-primary hover:border-secondary transition-colors group">
-                <div class="w-12 h-12 bg-primary group-hover:bg-secondary text-white flex items-center justify-center mb-6 transition-colors">
-                    <i class="fa-solid fa-seedling text-xl"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-tighter">Kemandirian</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Pendampingan ekonomi berkelanjutan agar masyarakat mampu mengelola sumber daya alam secara mandiri.</p>
-                <span class="absolute -bottom-4 right-4 text-4xl font-black text-gray-100 group-hover:text-secondary/10 transition-colors">04</span>
-            </div>
-        </div>
-
-        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-gray-200 pt-12">
-            <div>
-                <p class="text-3xl font-black text-primary">50+</p>
-                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Kampung Didampingi</p>
-            </div>
-            <div>
-                <p class="text-3xl font-black text-primary">120k</p>
-                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Hektar Terpetakan</p>
-            </div>
-            <div>
-                <p class="text-3xl font-black text-primary">15</p>
-                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Produk Regulasi</p>
-            </div>
-            <div>
-                <p class="text-3xl font-black text-primary">200+</p>
-                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-1">Kader Muda Adat</p>
-            </div>
-        </div>
-    </div>
-</section>
-      
-      
-      <section id="partners" class="bg-white py-20 border-t border-gray-100">
-    <div class="container mx-auto px-6">
-        <div class="mb-12 text-center md:text-left">
-            <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Kolaborasi & Sinergi</span>
-            <h2 class="text-3xl font-bold mt-3 uppercase tracking-tight">Jaringan Kerja Kami</h2>
-            <div class="h-1 w-20 bg-primary mt-4 mx-auto md:mx-0"></div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70">
-            <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
-                <img src="https://placehold.co/200x100/EEE/31343C" alt="AMAN" class="h-12 object-contain mb-3">
-                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">AMAN Nasional</span>
-            </div>
-
-            <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
-                <img src="https://placehold.co/200x100/EEE/31343C" alt="Kemitraan" class="h-12 object-contain mb-3">
-                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Kemitraan (Partnership)</span>
-            </div>
-
-            <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
-                <img src="https://placehold.co/200x100/EEE/31343C" alt="JKPP" class="h-12 object-contain mb-3">
-                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">JKPP</span>
-            </div>
-
-            <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
-                <img src="https://placehold.co/200x100/EEE/31343C" alt="Samdhana Institute" class="h-12 object-contain mb-3">
-                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Samdhana Institute</span>
-            </div>
-
-            <div class="group flex flex-col items-center justify-center p-6 border border-transparent hover:border-gray-100 hover:shadow-sm transition-all duration-300 grayscale hover:grayscale-0">
-                <img src="https://placehold.co/200x100/EEE/31343C" alt="Pemerintah Daerah" class="h-12 object-contain mb-3">
-                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-primary transition-colors text-center">Pemerintah Provinsi Papua</span>
-            </div>
-        </div>
-
-        <div class="mt-16 bg-accent p-8 md:p-12 no-rounded shadow-md flex flex-col md:flex-row items-center justify-between gap-8 border-l-8 border-secondary">
-            <div class="max-w-xl">
-                <h4 class="text-xl font-bold uppercase mb-2">Tertarik Menjadi Mitra Strategis?</h4>
-                <p class="text-gray-500 text-xs leading-relaxed">Kami selalu terbuka untuk kolaborasi yang berdampak positif bagi kedaulatan masyarakat adat dan kelestarian alam di Tanah Papua.</p>
-            </div>
-            <a href="#contact" class="whitespace-nowrap bg-primary text-white px-8 py-4 no-rounded font-bold uppercase tracking-widest text-[11px] hover:bg-secondary transition-colors shadow-lg">
-                Jalin Kerja Sama <i class="fa-solid fa-handshake ml-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
-      
-      
-      
-      
-      <section id="gallery" class="bg-white py-20" x-data="{ expanded: false }">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div class="max-w-xl">
-                <span class="text-secondary font-bold tracking-widest uppercase text-[11px]">Dokumentasi Lapangan</span>
-                <h2 class="text-3xl font-bold mt-2 uppercase tracking-tight">Aktivitas & Jejak Rekam</h2>
-                <div class="h-1 w-20 bg-primary mt-4"></div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
-                <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Pemetaan Partisipatif</p>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
-                <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Musyawarah Adat</p>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
-                <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Sekolah Kader Muda</p>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
-                <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 4" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Advokasi Kebijakan</p>
-                </div>
-            </div>
-
-            <template x-if="expanded">
-                <div class="contents">
-                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-4">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 5" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Pengembangan Ekonomi</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Pemetaan Partisipatif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Pemetaan Partisipatif</p>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-75" x-transition:enter-start="opacity-0 transform translate-y-4">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 6" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Riset Sosial</p>
+                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Musyawarah Adat" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Musyawarah Adat</p>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-150" x-transition:enter-start="opacity-0 transform translate-y-4">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 7" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Distribusi Logistik</p>
+                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Pelatihan Kader" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Pelatihan Kader Muda Adat</p>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-225" x-transition:enter-start="opacity-0 transform translate-y-4">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Kegiatan 8" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Monitoring Wilayah</p>
+                    <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Advokasi Kebijakan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Advokasi Kebijakan Publik</p>
                         </div>
                     </div>
-                </div>
-            </template>
-        </div>
 
-        <div class="mt-12 text-center">
-            <button 
-                @click="expanded = !expanded" 
-                class="bg-white border-2 border-primary text-primary px-10 py-4 font-bold uppercase tracking-widest text-[12px] no-rounded hover:bg-primary hover:text-white transition-all shadow-md active:scale-95"
-                x-text="expanded ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Selengkapnya'"
-            ></button>
-        </div>
-    </div>
-</section>
-      
-      
-      
-      
-      <section id="contact-v2" class="bg-accent py-20">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-0 shadow-2xl no-rounded bg-white overflow-hidden">
-            
-            <div class="p-8 md:p-12 border-r border-gray-100">
-                <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Hubungi Kami</span>
-                <h2 class="text-3xl font-bold mt-3 mb-8 uppercase tracking-tight">Koneksi & Kemitraan</h2>
-                
-                <div class="space-y-6 mb-10">
-                    <div class="flex items-start gap-4">
-                        <i class="fa-solid fa-location-dot mt-1 text-secondary"></i>
-                        <div>
-                            <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Kantor Pusat</p>
-                            <p class="text-primary mt-1">Jl. Buper, Waena, Distrik Heram, Kota Jayapura, Papua 99351</p>
+                    <template x-if="expanded">
+                        <div class="contents">
+                            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-y-4">
+                                <img src="https://placehold.co/600x400/EEE/31343C" alt="Pengembangan Ekonomi Adat" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Pengembangan Ekonomi Adat</p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-75" x-transition:enter-start="opacity-0 transform translate-y-4">
+                                <img src="https://placehold.co/600x400/EEE/31343C" alt="Riset Sosial Budaya" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Riset Sosial Budaya</p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-150" x-transition:enter-start="opacity-0 transform translate-y-4">
+                                <img src="https://placehold.co/600x400/EEE/31343C" alt="Penguatan Perempuan Adat" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Penguatan Perempuan Adat</p>
+                                </div>
+                            </div>
+                            <div class="group relative overflow-hidden bg-gray-200 aspect-square shadow-md no-rounded cursor-zoom-in" x-transition:enter="transition ease-out duration-500 delay-225" x-transition:enter-start="opacity-0 transform translate-y-4">
+                                <img src="https://placehold.co/600x400/EEE/31343C" alt="Monitoring Wilayah Adat" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary/60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p class="text-white text-[10px] font-bold uppercase tracking-widest text-center">Monitoring Wilayah Adat</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="fa-solid fa-envelope mt-1 text-secondary"></i>
-                        <div>
-                            <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Email Resmi</p>
-                            <p class="text-primary mt-1">info@ptppm-papua.org</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="fa-solid fa-phone mt-1 text-secondary"></i>
-                        <div>
-                            <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Telepon</p>
-                            <p class="text-primary mt-1">0967-582681</p>
-                        </div>
-                    </div>
+                    </template>
                 </div>
 
-                <div class="mb-10 pt-8 border-t border-gray-100">
-                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400 mb-4">Media Sosial</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
-                            <i class="fa-brands fa-x-twitter"></i>
+                <div class="mt-12 text-center">
+                    <button 
+                        @click="expanded = !expanded" 
+                        class="bg-white border-2 border-primary text-primary px-10 py-4 font-bold uppercase tracking-widest text-[12px] no-rounded hover:bg-primary hover:text-white transition-all shadow-md active:scale-95"
+                        x-text="expanded ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Selengkapnya'"
+                    ></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KONTAK ============ -->
+        <section id="contact-v2" class="bg-accent py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-0 shadow-2xl no-rounded bg-white overflow-hidden">
+                    
+                    <div class="p-8 md:p-12 border-r border-gray-100">
+                        <span class="text-secondary font-bold tracking-[0.2em] uppercase text-[10px]">Hubungi Kami</span>
+                        <h2 class="text-3xl font-bold mt-3 mb-8 uppercase tracking-tight">Koneksi & Kemitraan</h2>
+                        
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-location-dot mt-1 text-secondary"></i>
+                                <div>
+                                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Kantor Pusat</p>
+                                    <p class="text-primary mt-1">Jl. Pramuka No. 18, Buper Waena, Kota Jayapura, Provinsi Papua</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-envelope mt-1 text-secondary"></i>
+                                <div>
+                                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Email Resmi</p>
+                                    <p class="text-primary mt-1">ptppma_papua@yahoo.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-phone mt-1 text-secondary"></i>
+                                <div>
+                                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Telepon Kantor</p>
+                                    <p class="text-primary mt-1">0967-5170510</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-mobile-screen mt-1 text-secondary"></i>
+                                <div>
+                                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">WhatsApp / HP</p>
+                                    <p class="text-primary mt-1">082210530504 (Direktur Eksekutif)</p>
+                                    <p class="text-primary">082352492122 (Ketua Badan Pengurus)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-globe mt-1 text-secondary"></i>
+                                <div>
+                                    <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400">Website</p>
+                                    <a href="http://www.ptppma.or.id" target="_blank" class="text-secondary hover:underline mt-1 block">www.ptppma.or.id</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-10 pt-8 border-t border-gray-100">
+                            <p class="font-bold uppercase text-[11px] tracking-widest text-gray-400 mb-4">Media Sosial</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-accent text-primary flex items-center justify-center no-rounded hover:bg-secondary hover:text-white transition-all shadow-sm">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="mailto:ptppma_papua@yahoo.com" class="inline-block w-full text-center bg-primary text-white py-4 font-bold uppercase tracking-widest text-[12px] no-rounded hover:bg-gray-800 transition shadow-lg">
+                            Kirim Pesan Langsung <i class="fa-solid fa-paper-plane ml-2"></i>
                         </a>
                     </div>
-                </div>
 
-                <a href="mailto:info@ptppm-papua.org" class="inline-block w-full text-center bg-primary text-white py-4 font-bold uppercase tracking-widest text-[12px] no-rounded hover:bg-gray-800 transition shadow-lg">
-                    Kirim Pesan Langsung <i class="fa-solid fa-paper-plane ml-2"></i>
-                </a>
-            </div>
+                    <div class="relative min-h-[400px] md:min-h-full grayscale hover:grayscale-0 transition-all duration-700 bg-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.875266855146!2d140.6358172108502!3d-2.5802280383188544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686cf46522c00329%3A0x6b04323e01d3618a!2sWaena%2C%20Heram%2C%20Jayapura%20City%2C%20Papua!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid" 
+                            class="absolute inset-0 w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="absolute bottom-6 left-6 bg-white p-4 no-rounded shadow-xl border-l-4 border-secondary max-w-[220px]">
+                            <p class="font-bold uppercase text-[10px] tracking-tighter text-gray-400">Kantor Pusat PPMA</p>
+                            <p class="text-[12px] font-bold text-primary leading-tight mt-1">Jl. Pramuka No. 18, Buper Waena — Jayapura, Papua</p>
+                        </div>
+                    </div>
 
-            <div class="relative min-h-[400px] md:min-h-full grayscale hover:grayscale-0 transition-all duration-700 bg-gray-200">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.875266855146!2d140.6358172108502!3d-2.5802280383188544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686cf46522c00329%3A0x6b04323e01d3618a!2sWaena%2C%20Heram%2C%20Jayapura%20City%2C%20Papua!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid" 
-                    class="absolute inset-0 w-full h-full border-0" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                
-                <div class="absolute bottom-6 left-6 bg-white p-4 no-rounded shadow-xl border-l-4 border-secondary max-w-[200px]">
-                    <p class="font-bold uppercase text-[10px] tracking-tighter text-gray-400">Lokasi Strategis</p>
-                    <p class="text-[12px] font-bold text-primary leading-tight mt-1">Waena, Kota Jayapura - Papua</p>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
-      
-      
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-white py-12 border-t border-gray-100">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <p class="font-bold text-lg mb-1 uppercase tracking-tighter text-secondary">Pt-PPMA PAPUA</p>
-                <p class="text-gray-400 text-xs">© 2026 Perkumpulan Terbatas Pengkajian & Pemberdayaan Masyarakat Adat.</p>
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <p class="font-bold text-lg mb-2 uppercase tracking-tighter text-secondary">PPMA PAPUA</p>
+                    <p class="text-gray-400 text-xs leading-relaxed">Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua<br><em>The Association for Papuan Indigenous Peoples Study & Empowerment</em></p>
+                </div>
+                <div>
+                    <p class="font-bold text-[11px] uppercase tracking-widest text-gray-400 mb-3">Navigasi</p>
+                    <ul class="space-y-2 text-xs text-gray-500">
+                        <li><a href="#tentang" class="hover:text-secondary transition">Tentang PPMA</a></li>
+                        <li><a href="#features" class="hover:text-secondary transition">Pilar Program</a></li>
+                        <li><a href="#wilayah" class="hover:text-secondary transition">Wilayah Kerja</a></li>
+                        <li><a href="#pengurus" class="hover:text-secondary transition">Struktur Pengurus</a></li>
+                        <li><a href="#articles" class="hover:text-secondary transition">Artikel & Blog</a></li>
+                        <li><a href="#partners" class="hover:text-secondary transition">Jaringan Mitra</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold text-[11px] uppercase tracking-widest text-gray-400 mb-3">Kontak</p>
+                    <ul class="space-y-2 text-xs text-gray-500">
+                        <li><i class="fa-solid fa-location-dot text-secondary mr-2"></i>Jl. Pramuka No. 18, Buper Waena, Jayapura</li>
+                        <li><i class="fa-solid fa-phone text-secondary mr-2"></i>0967-5170510</li>
+                        <li><i class="fa-solid fa-envelope text-secondary mr-2"></i>ptppma_papua@yahoo.com</li>
+                        <li><i class="fa-solid fa-globe text-secondary mr-2"></i><a href="http://www.ptppma.or.id" class="hover:text-secondary transition">www.ptppma.or.id</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="text-center md:text-right">
-                <p class="text-gray-400 text-xs mb-2">Developed for Proposal by</p>
-                <a href="https://nokensoft.com" class="font-bold text-primary">NOKENSOFT.COM</a>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100 gap-4">
+                <p class="text-gray-400 text-xs">© 2026 Perkumpulan Terbatas Pengkajian & Pemberdayaan Masyarakat Adat Papua. Semua hak dilindungi.</p>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-xs mb-1">Developed for Proposal by</p>
+                    <a href="https://nokensoft.com" class="font-bold text-primary">NOKENSOFT.COM</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -568,27 +1035,50 @@
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['2021', '2022', '2023', '2024', '2025', '2026'],
-                datasets: [{
-                    label: 'Wilayah Terpetakan (Hektar/Satuan)',
-                    data: [15, 25, 40, 55, 80, 95],
-                    borderWidth: 3,
-                    borderColor: '#15803d',
-                    backgroundColor: 'rgba(21, 128, 61, 0.1)',
-                    fill: true,
-                    tension: 0.4
-                }]
+                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [
+                    {
+                        label: 'Wilayah Terpetakan (Satuan Komunitas)',
+                        data: [8, 15, 22, 35, 48, 60],
+                        borderWidth: 3,
+                        borderColor: '#15803d',
+                        backgroundColor: 'rgba(21, 128, 61, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Kader Terlatih (Puluhan)',
+                        data: [5, 9, 13, 17, 19, 21],
+                        borderWidth: 2,
+                        borderColor: '#1a1a1a',
+                        backgroundColor: 'rgba(26,26,26,0.05)',
+                        fill: true,
+                        tension: 0.4,
+                        borderDash: [5,5]
+                    }
+                ]
             },
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { display: false }
+                    legend: {
+                        labels: { font: { family: 'Plus Jakarta Sans', size: 10 }, boxWidth: 12 }
+                    }
                 },
                 scales: {
-                    y: { beginAtZero: true }
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } }
+                    }
                 }
             }
         });
     </script>
+
 </body>
 </html>
