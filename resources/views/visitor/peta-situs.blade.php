@@ -15,8 +15,8 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
 @endsection
 
 @section('content')
-    <div class="bg-secondary py-16">
-        <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-primary py-16 relative overflow-hidden"><div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <span class="text-white/70 text-lg uppercase tracking-widest">
                 <a href="{{ route('beranda') }}" class="hover:text-white">Beranda</a> › Peta Situs
             </span>
@@ -47,9 +47,11 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                         <li><a href="{{ route('beranda') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Beranda</a></li>
                         <li><a href="{{ route('profil') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Profil Lembaga</a></li>
                         <li><a href="{{ route('sejarah') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Sejarah Singkat</a></li>
-                        <li><a href="{{ route('tokoh') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Direktur</a></li>
-                        <li><a href="{{ route('bidang-kerja') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Bidang Kerja</a></li>
+                        <li><a href="{{ route('kepengurusan') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Kepengurusan</a></li>
+                        <li><a href="{{ route('pilar-kerja') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Program Kerja</a></li>
                         <li><a href="{{ route('mitra') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Mitra Kerja</a></li>
+                        <li><a href="/faq" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>FAQ</a></li>
+                        <li><a href="/disclaimer" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Disclaimer</a></li>
                         <li><a href="{{ route('program') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Program</a></li>
                         <li><a href="{{ route('berita') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Blog</a></li>
                         <li><a href="{{ route('galeri') }}" class="text-neutral-700 hover:text-secondary transition"><i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>Galeri</a></li>
@@ -67,7 +69,10 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                         @forelse ($halamanList as $h)
                             @if (!in_array($h->slug, ['sejarah', 'profil', 'mitra', 'bidang-kerja']))
                                 <li>
-                                    <a href="{{ route('halaman.show', $h->slug) }}" class="text-neutral-700 hover:text-secondary transition">
+                                    @php
+                                        try { $hUrl = route($h->slug); } catch (\Exception $e) { $hUrl = route('halaman.show', $h->slug); }
+                                    @endphp
+                                    <a href="{{ $hUrl }}" class="text-neutral-700 hover:text-secondary transition">
                                         <i class="fa-solid fa-angle-right text-neutral-300 mr-2 text-lg"></i>{{ $h->judul }}
                                     </a>
                                 </li>

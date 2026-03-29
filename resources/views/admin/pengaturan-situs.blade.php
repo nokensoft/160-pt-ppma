@@ -43,17 +43,17 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="text-lg font-bold uppercase text-gray-500 block mb-2">Telepon Kantor</label>
-                        <input type="text" name="telepon" value="{{ $settings['telepon'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="0967-5170510">
+                        <input type="text" name="telepon" value="{{ $settings['telepon'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="+62 821-9750-1692">
                     </div>
                     <div>
                         <label class="text-lg font-bold uppercase text-gray-500 block mb-2">Fax</label>
-                        <input type="text" name="fax" value="{{ $settings['fax'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="0967-5170510">
+                        <input type="text" name="fax" value="{{ $settings['fax'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="+62 821-9750-1692">
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="text-lg font-bold uppercase text-gray-500 block mb-2">WhatsApp Direktur</label>
-                        <input type="text" name="whatsapp_direktur" value="{{ $settings['whatsapp_direktur'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="082210530504">
+                        <input type="text" name="whatsapp_direktur" value="{{ $settings['whatsapp_direktur'] ?? '' }}" class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round" placeholder="6282197501692">
                     </div>
                     <div>
                         <label class="text-lg font-bold uppercase text-gray-500 block mb-2">WhatsApp Ketua</label>

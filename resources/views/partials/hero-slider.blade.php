@@ -20,7 +20,7 @@
                     'desc'     => 'Lima pilar strategis PPMA Papua — PMA, KPP, PEMA, PPA, dan PISD — dirancang untuk memperkuat posisi dan hak masyarakat adat di 7 wilayah adat Tanah Papua.',
                     'bg'       => asset('img/illustration/2.png'),
                     'img'      => asset('img/illustration/2.png'),
-                    'primary'  => ['url' => route('bidang-kerja'), 'text' => 'Lihat Program', 'icon' => 'fa-solid fa-list-check'],
+                    'primary'  => ['url' => route('pilar-kerja'), 'text' => 'Lihat Program', 'icon' => 'fa-solid fa-list-check'],
                     'outline'  => ['url' => '#pilar-program', 'text' => 'Pilar Program', 'icon' => 'fa-solid fa-arrow-down'],
                 ],
                 [

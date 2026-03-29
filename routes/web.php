@@ -52,12 +52,14 @@ Route::middleware('track.visitor')->group(function () {
     // Halaman dinamis (CMS)
     Route::get('/halaman/{slug}', [VisitorController::class, 'halaman'])->name('halaman.show');
 
-    // Tentang PPMA Papua (dinamis dari DB via Halaman)
-    Route::get('/sejarah', [VisitorController::class, 'sejarah'])->name('sejarah');
-    Route::get('/profil', [VisitorController::class, 'profil'])->name('profil');
-    Route::get('/mitra', [VisitorController::class, 'mitra'])->name('mitra');
-    Route::get('/bidang-kerja', [VisitorController::class, 'bidangKerja'])->name('bidang-kerja');
-    Route::view('/tokoh', 'visitor.tokoh')->name('tokoh');
+    // Halaman CMS — route slug sesuai slug di database
+    Route::get('/sejarah',      fn () => app(VisitorController::class)->halaman('sejarah')     )->name('sejarah');
+    Route::get('/profil',       fn () => app(VisitorController::class)->halaman('profil')      )->name('profil');
+    Route::get('/pilar-kerja', fn () => app(VisitorController::class)->halaman('bidang-kerja'))->name('pilar-kerja');
+    Route::get('/faq',          fn () => app(VisitorController::class)->halaman('faq')         )->name('faq');
+    Route::get('/disclaimer',   fn () => app(VisitorController::class)->halaman('disclaimer')  )->name('disclaimer');
+    Route::get('/mitra',        [VisitorController::class, 'mitra'])->name('mitra');
+    Route::view('/kepengurusan', 'visitor.pengurusan')->name('kepengurusan');
 
     // Program (static)
     Route::view('/program', 'visitor.program')->name('program');

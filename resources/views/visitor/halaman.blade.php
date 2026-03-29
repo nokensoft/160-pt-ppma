@@ -22,8 +22,8 @@
 
 @section('content')
     {{-- Breadcrumb Header --}}
-    <div class="bg-secondary py-16">
-        <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-primary py-16 relative overflow-hidden"><div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <span class="text-white/70 text-lg uppercase tracking-widest">
                 <a href="{{ route('beranda') }}" class="hover:text-white">Beranda</a> › {{ $halaman->judul }}
             </span>

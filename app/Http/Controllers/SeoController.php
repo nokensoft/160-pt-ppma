@@ -55,8 +55,10 @@ class SeoController extends Controller
             ['loc' => route('sejarah'),     'priority' => '0.6', 'changefreq' => 'monthly'],
             ['loc' => route('profil'),      'priority' => '0.6', 'changefreq' => 'monthly'],
             ['loc' => route('mitra'),       'priority' => '0.5', 'changefreq' => 'monthly'],
-            ['loc' => route('bidang-kerja'),'priority' => '0.5', 'changefreq' => 'monthly'],
-            ['loc' => route('tokoh'),       'priority' => '0.5', 'changefreq' => 'monthly'],
+            ['loc' => route('pilar-kerja'),'priority' => '0.5', 'changefreq' => 'monthly'],
+            ['loc' => route('kepengurusan'),       'priority' => '0.5', 'changefreq' => 'monthly'],
+            ['loc' => route('faq'),         'priority' => '0.4', 'changefreq' => 'monthly'],
+            ['loc' => route('disclaimer'),  'priority' => '0.3', 'changefreq' => 'yearly'],
             ['loc' => route('peta-situs'),  'priority' => '0.4', 'changefreq' => 'weekly'],
         ];
 
@@ -110,7 +112,7 @@ class SeoController extends Controller
             ->get()
             ->each(function ($halaman) use ($urls) {
                 // Skip slugs that already have dedicated routes
-                if (in_array($halaman->slug, ['sejarah', 'profil', 'mitra', 'bidang-kerja'])) {
+                if (in_array($halaman->slug, ['sejarah', 'profil', 'mitra', 'bidang-kerja', 'faq', 'disclaimer'])) {
                     return;
                 }
                 $urls->push([

@@ -26,7 +26,7 @@ class HalamanSeeder extends Seeder
         </div>
         <div class="grid md:grid-cols-2 gap-16 items-start">
             <div class="fade-in">
-                <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-leaf mr-2"></i>Tentang Kami</p>
+                <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-leaf mr-2"></i>Tentang Kami</p>
                 <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-6">Perjalanan PPMA Papua</h2>
                 <div class="space-y-5 text-neutral-600 leading-relaxed">
                     <p>Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua (PPMA Papua) adalah bagian dari Civil Society Organisation (CSO) yang bergerak di bidang pengorganisasian dan penguatan masyarakat adat.</p>
@@ -37,28 +37,28 @@ class HalamanSeeder extends Seeder
             </div>
             <div class="fade-in">
                 <h3 class="text-xl font-display font-bold text-neutral-900 mb-8">Tonggak Sejarah</h3>
-                <div class="relative border-l-2 border-primary-200 pl-8 space-y-8">
+                <div class="relative border-l-2 border-secondary/30 pl-8 space-y-8">
                     <div class="relative fade-in">
-                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-primary-500 border-2 border-white shadow"></div>
-                        <span class="inline-block text-xs font-bold bg-primary-50 text-primary-600 px-3 py-1 mb-2">1988</span>
+                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-secondary/100 border-2 border-white shadow"></div>
+                        <span class="inline-block text-xs font-bold bg-secondary/10 text-secondary px-3 py-1 mb-2">1988</span>
                         <h4 class="font-display font-bold text-neutral-900">Pendirian YKPHMA</h4>
                         <p class="text-neutral-500 text-sm mt-1">Didirikan dengan nama Yayasan Pendidikan Hukum Masyarakat Adat (YKPHMA) Irian Jaya oleh Maria Ruwiastuti, Zadrak Wamebu, dan Dr. Loupaty.</p>
                     </div>
                     <div class="relative fade-in">
-                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-primary-500 border-2 border-white shadow"></div>
-                        <span class="inline-block text-xs font-bold bg-primary-50 text-primary-600 px-3 py-1 mb-2">1997</span>
+                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-secondary/100 border-2 border-white shadow"></div>
+                        <span class="inline-block text-xs font-bold bg-secondary/10 text-secondary px-3 py-1 mb-2">1997</span>
                         <h4 class="font-display font-bold text-neutral-900">Akta Pendirian Resmi</h4>
                         <p class="text-neutral-500 text-sm mt-1">Akta pendirian resmi PPMA Papua ditandatangani pada 31 Oktober 1997.</p>
                     </div>
                     <div class="relative fade-in">
-                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-primary-500 border-2 border-white shadow"></div>
-                        <span class="inline-block text-xs font-bold bg-primary-50 text-primary-600 px-3 py-1 mb-2">2020</span>
+                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-secondary/100 border-2 border-white shadow"></div>
+                        <span class="inline-block text-xs font-bold bg-secondary/10 text-secondary px-3 py-1 mb-2">2020</span>
                         <h4 class="font-display font-bold text-neutral-900">Periode Kerja Baru</h4>
                         <p class="text-neutral-500 text-sm mt-1">Memasuki periode kerja 2020–2025 dengan 5 pilar program strategis: PMA, KPP, PEMA, PPA, dan PISD.</p>
                     </div>
                     <div class="relative fade-in">
-                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-primary-500 border-2 border-white shadow"></div>
-                        <span class="inline-block text-xs font-bold bg-primary-50 text-primary-600 px-3 py-1 mb-2">2025</span>
+                        <div class="absolute -left-10 w-4 h-4 rounded-full bg-secondary/100 border-2 border-white shadow"></div>
+                        <span class="inline-block text-xs font-bold bg-secondary/10 text-secondary px-3 py-1 mb-2">2025</span>
                         <h4 class="font-display font-bold text-neutral-900">Penguatan Kelembagaan</h4>
                         <p class="text-neutral-500 text-sm mt-1">Melanjutkan penguatan kapasitas kelembagaan dan program pemberdayaan masyarakat adat di 7 wilayah adat Tanah Papua.</p>
                     </div>
@@ -86,7 +86,7 @@ HTML,
             <img src="https://placehold.co/600x400" alt="Ilustrasi Profil Organisasi PPMA Papua" class="rounded-lg shadow-card max-w-lg w-full h-auto">
         </div>
         <div class="max-w-3xl mx-auto text-center fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-building mr-2"></i>Organisasi</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-building mr-2"></i>Organisasi</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-6">Tentang PPMA Papua</h2>
             <p class="text-neutral-600 leading-relaxed mb-4">Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua (PPMA Papua) adalah bagian dari Civil Society Organisation (CSO) yang bergerak di bidang pengorganisasian dan penguatan masyarakat adat, berkaitan dengan kepastian hak dan ruang hidupnya untuk kemandirian dan kesejahteraannya.</p>
             <p class="text-neutral-600 leading-relaxed">Berbasis di Jayapura, lembaga ini bekerja di beberapa kabupaten di Provinsi Papua dan Papua Selatan dengan fokus pada pengorganisasian masyarakat adat, advokasi kebijakan, pengembangan ekonomi, dan penguatan perempuan adat.</p>
@@ -97,8 +97,8 @@ HTML,
 <section class="py-20 bg-neutral-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center fade-in">
-            <div class="w-14 h-14 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-eye text-primary-500 text-2xl"></i></div>
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2">Arah Organisasi</p>
+            <div class="w-14 h-14 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-eye text-secondary text-2xl"></i></div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2">Arah Organisasi</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-6">Visi</h2>
             <p class="text-neutral-600 leading-relaxed text-lg">Terwujudnya Masyarakat Adat Papua Yang Mampu Mengorganisir Diri Dan Merekonsiliasi Hubungan Dengan Tuhan Dan Alam Semesta Papua Untuk Kehidupan Yang Berdaulat Dan Berkelanjutan Dalam Berbagai Aspek Kehidupan Di Tahun 2040.</p>
         </div>
@@ -108,37 +108,37 @@ HTML,
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10 fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-bullseye mr-2"></i>Langkah Strategis</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-bullseye mr-2"></i>Langkah Strategis</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Misi</h2>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-pray text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-pray text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">Rekon</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Mendorong rekonsiliasi (nilai, norma, spirit) hubungan antara Manusia dengan Tuhan dan Alam Semesta</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-map-location-dot text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-map-location-dot text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">PMA</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Terorganisir dan menguatnya kapasitas kelembagaan Masyarakat Adat dalam rangka menentukan posisi strategis yang kuat untuk meningkatkan posisi tawarnya dalam aspek ekosob dan sipol menuju kemandirian dan keberlanjutan hidup pada 7 wilayah adat di Tanah Papua</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-scale-balanced text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-scale-balanced text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">KPP</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Melakukan Kajian dan Advokasi Kebijakan yang membatasi ruang, akses dan control Hak-Hak Dasar Ekosob dan Sipol Masyarakat Adat pada 7 wilayah Adat di Tanah Papua</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-users-gear text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-users-gear text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">PPA</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Menguatnya Posisi perempuan adat dalam mengembangkan potensi diri guna keberlanjutan hidup komunitas Adat di Tanah Papua</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-seedling text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-seedling text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">PEMA</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Mengelola potensi SDA dalam rangka pemberdayaan dan pengembangan Ekosob berbasiskan Masyarakat adat Papua</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-building-circle-check text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-building-circle-check text-secondary text-xl"></i></div>
                 <h4 class="font-display font-bold text-neutral-900 mb-2">PISD</h4>
                 <p class="text-neutral-500 text-sm leading-relaxed">Meningkatnya kapasitas dan kemandirian Pt. PPMA dalam menyediakan sumber daya yang memadai guna mendukung pelaksanaan program dan operasional dalam menjamin keberlangsungan lembaga demi tercapainya visi dan misi Perkumpulan</p>
             </div>
@@ -149,32 +149,32 @@ HTML,
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10 fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-heart mr-2"></i>Prinsip Kami</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-heart mr-2"></i>Prinsip Kami</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Nilai Organisasi</h2>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-eye text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-eye text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Transparansi</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-people-group text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-people-group text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Demokrasi</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-venus-mars text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-venus-mars text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Kesetaraan Gender</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-hands-holding-circle text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-hands-holding-circle text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Partisipasi</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-arrows-spin text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-arrows-spin text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Keberlanjutan</p>
             </div>
-            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-primary-200 transition">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-leaf text-primary-500 text-xl"></i></div>
+            <div class="rounded-lg bg-neutral-50 border border-neutral-100 p-6 text-center shadow-card fade-in hover:border-secondary/30 transition">
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-leaf text-secondary text-xl"></i></div>
                 <p class="font-display font-bold text-neutral-900">Kelestarian</p>
             </div>
         </div>
@@ -184,37 +184,37 @@ HTML,
 <section class="py-20 bg-neutral-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12 fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-id-card mr-2"></i>Data</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-id-card mr-2"></i>Data</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Identitas Lembaga</h2>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-building text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-building text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Nama Resmi</p>
                 <p class="font-semibold text-neutral-900">Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua (PPMA Papua)</p>
             </div>
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-signature text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-signature text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Singkatan</p>
                 <p class="font-semibold text-neutral-900">PPMA Papua</p>
             </div>
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-calendar-days text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-calendar-days text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Tahun Berdiri</p>
                 <p class="font-semibold text-neutral-900">1988</p>
             </div>
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-sitemap text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-sitemap text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Jenis Organisasi</p>
                 <p class="font-semibold text-neutral-900">LSM / NGO Nirlaba</p>
             </div>
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-location-dot text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-location-dot text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Kantor Pusat</p>
                 <p class="font-semibold text-neutral-900">Jayapura, Papua</p>
             </div>
             <div class="rounded-lg bg-white p-6 shadow-card fade-in text-center">
-                <div class="w-12 h-12 bg-primary-50 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-bullseye text-primary-500 text-xl"></i></div>
+                <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-bullseye text-secondary text-xl"></i></div>
                 <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Bidang Fokus</p>
                 <p class="font-semibold text-neutral-900">Pengkajian dan Pemberdayaan Masyarakat Adat Papua</p>
             </div>
@@ -236,7 +236,7 @@ HTML,
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14 fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-list-check mr-2"></i>Pilar Strategis</p>
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-list-check mr-2"></i>Pilar Strategis</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Program Kerja</h2>
             <p class="text-neutral-500 mt-3 max-w-2xl mx-auto">Lima program kerja utama PPMA Papua yang dirancang untuk memperkuat posisi dan hak masyarakat adat di Tanah Papua.</p>
         </div>
@@ -244,11 +244,11 @@ HTML,
         <div class="space-y-8">
             <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 shadow-card fade-in">
                 <div class="grid md:grid-cols-3 gap-0">
-                    <div class="bg-primary-500 p-8 flex flex-col justify-center">
+                    <div class="bg-secondary/100 p-8 flex flex-col justify-center">
                         <div class="w-12 h-12 bg-white/20 flex items-center justify-center mb-4"><i class="fa-solid fa-map-location-dot text-white text-xl"></i></div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mb-1">A</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mb-1">A</span>
                         <h3 class="text-xl font-display font-bold text-white">Penguatan Masyarakat Adat</h3>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mt-2">PMA</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mt-2">PMA</span>
                     </div>
                     <div class="md:col-span-2 p-8">
                         <p class="text-neutral-600 leading-relaxed">Pengorganisasian MA, Penguatan kelembagaan Adat, Pendidikan dan Pelatihan-pelatihan, Pemetaan Wilayah Adat, Kajian Sosial Budaya, Survey Potensi Ekonomi untuk pengembangan usaha mikro, Perencanaan Wilayah untuk memastikan ruang-ruang pemanfaatan ekonomi, pemukiman, pembangunan serta peruntukan lainnya dengan tetap menjaga keseimbangan alam dalam upaya adaptasi dan mitigasi secara inclusive berdasarkan nilai-nilai kearifan lokal dalam menghadapi perubahan iklim.</p>
@@ -258,11 +258,11 @@ HTML,
 
             <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 shadow-card fade-in">
                 <div class="grid md:grid-cols-3 gap-0">
-                    <div class="bg-primary-500 p-8 flex flex-col justify-center">
+                    <div class="bg-secondary/100 p-8 flex flex-col justify-center">
                         <div class="w-12 h-12 bg-white/20 flex items-center justify-center mb-4"><i class="fa-solid fa-scale-balanced text-white text-xl"></i></div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mb-1">B</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mb-1">B</span>
                         <h3 class="text-xl font-display font-bold text-white">Kajian Pendidikan Publik</h3>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mt-2">KPP</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mt-2">KPP</span>
                     </div>
                     <div class="md:col-span-2 p-8">
                         <p class="text-neutral-600 leading-relaxed">Kajian berbagai aturan perundang-undangan yang terkait dengan masyarakat adat, melakukan Pendataan berbagai Investasi, Survey dan Investigasi terhadap Konflik Investasi dan Pembangunan, Membangun Sistim Informasi data, Pengembangan Media publikasi dan Jaringan, Kampanye dan Advokasi, Mendorong Kebijakan Daerah yang melindungi Hak dan Keberadaan Masyarakat Adat.</p>
@@ -272,11 +272,11 @@ HTML,
 
             <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 shadow-card fade-in">
                 <div class="grid md:grid-cols-3 gap-0">
-                    <div class="bg-primary-500 p-8 flex flex-col justify-center">
+                    <div class="bg-secondary/100 p-8 flex flex-col justify-center">
                         <div class="w-12 h-12 bg-white/20 flex items-center justify-center mb-4"><i class="fa-solid fa-seedling text-white text-xl"></i></div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mb-1">C</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mb-1">C</span>
                         <h3 class="text-xl font-display font-bold text-white">Pengembangan Ekonomi Masyarakat Adat</h3>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mt-2">PEMA</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mt-2">PEMA</span>
                     </div>
                     <div class="md:col-span-2 p-8">
                         <p class="text-neutral-600 leading-relaxed">Penataan Bentuk-bentuk Kelembagaan Ekonomi, Pengembangan Sumber Potensi Ekonomi, Pelatihan Peningkatan Keterampilan Usaha dan Disain Produk, Pengurusan Perijinan Usaha Masyarakat serta mengusahakan Jaringan Pemasaran.</p>
@@ -286,11 +286,11 @@ HTML,
 
             <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 shadow-card fade-in">
                 <div class="grid md:grid-cols-3 gap-0">
-                    <div class="bg-primary-500 p-8 flex flex-col justify-center">
+                    <div class="bg-secondary/100 p-8 flex flex-col justify-center">
                         <div class="w-12 h-12 bg-white/20 flex items-center justify-center mb-4"><i class="fa-solid fa-users-gear text-white text-xl"></i></div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mb-1">D</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mb-1">D</span>
                         <h3 class="text-xl font-display font-bold text-white">Penguatan Perempuan Adat</h3>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mt-2">PPA</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mt-2">PPA</span>
                     </div>
                     <div class="md:col-span-2 p-8">
                         <p class="text-neutral-600 leading-relaxed">Pemberdayaan kelompok-kelompok perempuan melalui bentuk-bentuk Organisasi Perempuan, Pendidikan dan Pelatihan Gender dan nilai-nilai dan konteks kebudayaan serta Peningkatan Kapasitas melalui berbagai pelatihan, guna memperkuat partisipasi perempuan dalam ruang publik serta tetap menjaga generasi dan masa depan tanah Papua.</p>
@@ -300,11 +300,11 @@ HTML,
 
             <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 shadow-card fade-in">
                 <div class="grid md:grid-cols-3 gap-0">
-                    <div class="bg-primary-500 p-8 flex flex-col justify-center">
+                    <div class="bg-secondary/100 p-8 flex flex-col justify-center">
                         <div class="w-12 h-12 bg-white/20 flex items-center justify-center mb-4"><i class="fa-solid fa-building-circle-check text-white text-xl"></i></div>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mb-1">E</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mb-1">E</span>
                         <h3 class="text-xl font-display font-bold text-white">Penguatan Institusi dan Sumber Daya</h3>
-                        <span class="text-xs font-bold tracking-widest uppercase text-primary-200 mt-2">PISD</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-white/80 mt-2">PISD</span>
                     </div>
                     <div class="md:col-span-2 p-8">
                         <p class="text-neutral-600 leading-relaxed">Penguatan kapasitas kelembagaan PPMA melalui peningkatan sumber daya staff, pendataan dan pengelolaan asset, mengefektifkan manajemen sistem dalam internal kelembagaan melalui rapat-rapat internal, Rapat Badan Pengurus dan Rapat Anggota Tahunan, Rapat Umum Anggota, Menyiapkan laporan secara berkala, Monev, Fund Rising dan Memastikan Keberlanjutan Organisasi.</p>
@@ -320,10 +320,10 @@ HTML,
         <h2 class="text-xl md:text-2xl font-display font-bold text-neutral-900 mb-3">Ingin Mendukung Program Kami?</h2>
         <p class="text-neutral-500 max-w-lg mx-auto mb-6">Setiap kontribusi membantu mewujudkan kemandirian dan keadilan sosial bagi masyarakat adat Papua.</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="/donasi" class="bg-primary-500 text-white px-8 py-3 text-sm font-semibold hover:bg-primary-600 transition-colors shadow-card">
+            <a href="/donasi" class="bg-secondary/100 text-white px-8 py-3 text-sm font-semibold hover:bg-secondary transition-colors shadow-card">
                 <i class="fa-solid fa-heart mr-2"></i>Donasi Sekarang
             </a>
-            <a href="/kontak" class="border border-neutral-300 text-neutral-700 px-8 py-3 text-sm font-semibold hover:border-primary-400 hover:text-primary-600 transition-colors">
+            <a href="/kontak" class="border border-neutral-300 text-neutral-700 px-8 py-3 text-sm font-semibold hover:border-secondary hover:text-secondary transition-colors">
                 <i class="fa-solid fa-envelope mr-2"></i>Hubungi Kami
             </a>
         </div>
@@ -431,152 +431,6 @@ HTML,
         </div>
     </div>
 </section>
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-handshake mr-2"></i>Kemitraan</p>
-            <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4">Bersama Membangun Papua</h2>
-            <p class="text-neutral-600 leading-relaxed">Selama lebih dari 40 tahun, PPMA Papua telah menjalin kemitraan strategis dengan berbagai lembaga internasional, pemerintah, organisasi non-pemerintah, dan sektor korporasi. Kemitraan ini menjadi fondasi keberlanjutan program-program pemberdayaan masyarakat adat Papua.</p>
-        </div>
-
-        <div class="mb-14">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6 flex items-center gap-3">
-                <span class="flex-1 h-px bg-neutral-200"></span>
-                <span><i class="fa-solid fa-globe mr-2 text-primary-400"></i>Organisasi Internasional &amp; NGO</span>
-                <span class="flex-1 h-px bg-neutral-200"></span>
-            </h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-primary-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">AF</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">THD Asia Foundation</h4>
-                        <p class="text-xs text-primary-500 font-semibold uppercase tracking-wider mb-2">Asia</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Lembaga donor yang mendukung program penguatan masyarakat sipil dan pemberdayaan komunitas adat.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-primary-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇳🇱</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">ICCO</h4>
-                        <p class="text-xs text-primary-500 font-semibold uppercase tracking-wider mb-2">Belanda</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Organisasi Gereja-Gereja Kristen di Belanda (Interkerkelijke Coordinatie Commissie Ontwikkelingshulp). Salah satu mitra tertua PPMA Papua.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-primary-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇳🇱</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">PKN</h4>
-                        <p class="text-xs text-primary-500 font-semibold uppercase tracking-wider mb-2">Belanda</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Perkumpulan Kristen Nederland — penerus ICCO yang terus mendukung program pemberdayaan masyarakat adat Papua.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-primary-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">I</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">CEMOBE</h4>
-                        <p class="text-xs text-primary-500 font-semibold uppercase tracking-wider mb-2">Internasional</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Organisasi Gereja-Gereja Katolik yang mendukung program pendampingan komunitas dan advokasi hak-hak adat.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-primary-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇩🇪</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">BFDBW</h4>
-                        <p class="text-xs text-primary-500 font-semibold uppercase tracking-wider mb-2">Jerman</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Lembaga mitra dari Jerman yang memberikan dukungan program pemberdayaan masyarakat adat Papua.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-14">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6 flex items-center gap-3">
-                <span class="flex-1 h-px bg-neutral-200"></span>
-                <span><i class="fa-solid fa-landmark mr-2 text-accent-400"></i>Pemerintah &amp; Konsulat</span>
-                <span class="flex-1 h-px bg-neutral-200"></span>
-            </h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-accent-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇨🇦</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">Pemerintah Canada</h4>
-                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Canada</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Dukungan melalui program bantuan pembangunan internasional untuk penguatan masyarakat sipil di Papua.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-accent-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇯🇵</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">Pemerintah Jepang / Konsulat Jepang di Makassar</h4>
-                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Jepang</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Dukungan melalui jalur diplomatik Konsulat Jepang di Makassar untuk program pemberdayaan dan pertanian organik.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-accent-200 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">🇯🇵</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">Kantor Pos Jepang</h4>
-                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Jepang</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Mitra dalam jalur pengiriman dan distribusi dalam program ekspor kakao organik ke pasar Jepang.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6 flex items-center gap-3">
-                <span class="flex-1 h-px bg-neutral-200"></span>
-                <span><i class="fa-solid fa-building mr-2 text-neutral-400"></i>Korporasi &amp; Program CSR</span>
-                <span class="flex-1 h-px bg-neutral-200"></span>
-            </h3>
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-neutral-300 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">BP</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">BP Bintuni</h4>
-                        <p class="text-xs text-neutral-400 font-semibold uppercase tracking-wider mb-2">Indonesia &middot; CSR</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Dana CSR untuk mendampingi masyarakat yang terkena dampak operasional perusahaan di wilayah Teluk Bintuni.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden bg-neutral-50 border border-neutral-100 fade-in hover:border-neutral-300 hover:shadow-card transition">
-                    <div class="h-36 bg-white flex items-center justify-center p-6 border-b border-neutral-100">
-                        <span class="text-4xl">PT</span>
-                    </div>
-                    <div class="p-5">
-                        <h4 class="font-display font-bold text-neutral-900 text-sm leading-tight">PT Freeport Indonesia (PT FI)</h4>
-                        <p class="text-xs text-neutral-400 font-semibold uppercase tracking-wider mb-2">Indonesia &middot; CSR</p>
-                        <p class="text-neutral-500 text-sm leading-relaxed">Program CSR pendampingan Organisasi Masyarakat Sipil (CSO) penerima hibah dari PT Freeport Indonesia untuk komunitas di lingkar tambang.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-primary-600 py-14">
-    <div class="max-w-7xl mx-auto px-6 text-center fade-in">
-        <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-3">Tertarik Bermitra dengan PPMA Papua?</h2>
-        <p class="text-primary-200 text-lg mb-8">Kami terbuka untuk kolaborasi dengan lembaga, pemerintah, dan sektor swasta yang memiliki komitmen terhadap pemberdayaan masyarakat adat Papua.</p>
-        <a href="/kontak" class="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-3 text-sm font-semibold hover:bg-neutral-100 transition-colors shadow-card">
-            <i class="fa-solid fa-envelope"></i> Hubungi Kami
-        </a>
-    </div>
-</section>
 HTML,
             ],
 
@@ -586,70 +440,44 @@ HTML,
             [
                 'judul'     => 'FAQ',
                 'slug'      => 'faq',
-                'keterangan'=> 'Pertanyaan yang sering diajukan tentang PPMA Papua',
+                'keterangan'=> 'Pertanyaan yang sering diajukan seputar organisasi, program, donasi, dan blog PPMA Papua',
                 'urutan'    => 5,
                 'konten'    => <<<'HTML'
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 fade-in">
-            <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2"><i class="fa-solid fa-circle-question mr-2"></i>FAQ</p>
+        <div class="mb-12 fade-in text-center">
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-circle-question mr-2"></i>Pusat Bantuan</p>
             <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Pertanyaan yang Sering Diajukan</h2>
+            <p class="text-neutral-500 mt-3 max-w-2xl mx-auto">Temukan jawaban atas pertanyaan umum seputar PPMA Papua, program kerja, donasi, dan layanan kami.</p>
         </div>
-        <div class="space-y-4">
+        <div class="max-w-4xl mx-auto space-y-4">
             <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
-                <div class="p-5 bg-neutral-50">
-                    <h3 class="font-display font-bold text-neutral-900 flex items-center gap-3">
-                        <span class="w-7 h-7 bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
-                        Apa itu PPMA Papua?
-                    </h3>
-                </div>
-                <div class="p-5">
-            <p class="text-neutral-600 leading-relaxed">PPMA Papua (Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua) adalah bagian dari Civil Society Organisation (CSO) yang bergerak di bidang pengorganisasian dan penguatan masyarakat adat, didirikan pada tahun 1988. Lembaga ini bekerja di bidang penguatan masyarakat adat, kajian kebijakan, pengembangan ekonomi, penguatan perempuan adat, dan penguatan institusi.</p>
-                </div>
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>Apa itu PPMA Papua?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">PPMA Papua (<em>Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua</em>) adalah organisasi masyarakat sipil (CSO) yang bergerak di bidang pengorganisasian dan penguatan masyarakat adat Papua. Didirikan pada tahun 1988, lembaga ini bekerja melalui 5 pilar program: Penguatan Masyarakat Adat (PMA), Kajian Pendidikan Publik (KPP), Pengembangan Ekonomi Masyarakat Adat (PEMA), Penguatan Perempuan Adat (PPA), dan Penguatan Institusi &amp; Sumber Daya (PISD).</p></div>
             </div>
             <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
-                <div class="p-5 bg-neutral-50">
-                    <h3 class="font-display font-bold text-neutral-900 flex items-center gap-3">
-                        <span class="w-7 h-7 bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
-                        Apa itu Blog PPMA (Blog)?
-                    </h3>
-                </div>
-                <div class="p-5">
-                    <p class="text-neutral-600 leading-relaxed">Blog PPMA (Blog) adalah buletin yang diterbitkan oleh PPMA Papua sejak 1982. Buletin ini merupakan media alternatif yang menyuarakan realita kehidupan masyarakat adat Papua, meliputi isu tanah adat, pertanian, ekonomi komunitas, dan perkembangan kampung.</p>
-                </div>
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>Apa visi dan misi PPMA Papua?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">Visi PPMA Papua adalah terwujudnya Masyarakat Adat Papua yang mampu mengorganisir diri dan merekonsiliasi hubungan dengan Tuhan dan alam semesta untuk kehidupan yang berdaulat dan berkelanjutan di tahun 2040. Misi kami mencakup penguatan kelembagaan adat, kajian kebijakan, pengembangan ekonomi, penguatan perempuan, dan penguatan institusi lembaga. Selengkapnya di halaman <a href="/profil" class="text-secondary underline font-semibold">Profil Lembaga</a>.</p></div>
             </div>
             <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
-                <div class="p-5 bg-neutral-50">
-                    <h3 class="font-display font-bold text-neutral-900 flex items-center gap-3">
-                        <span class="w-7 h-7 bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
-                        Bagaimana cara berdonasi untuk program PPMA Papua?
-                    </h3>
-                </div>
-                <div class="p-5">
-                    <p class="text-neutral-600 leading-relaxed">Anda dapat berdonasi melalui halaman <a href="/donasi" class="text-primary-500 underline font-semibold">Donasi</a> di website ini. Pilih program yang ingin Anda dukung, isi formulir donasi, dan lakukan transfer ke rekening BNI yang tertera. Semua donasi akan dikelola secara transparan dan akuntabel.</p>
-                </div>
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>Di mana saja wilayah kerja PPMA Papua?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">PPMA Papua berkantor pusat di Jl. Pramuka No. 18, Buper Waena, Kota Jayapura. Wilayah kerja meliputi Kabupaten Jayapura dan Kabupaten Sarmi (Provinsi Papua), serta Kabupaten Mappi (Provinsi Papua Selatan). Pendampingan juga dilakukan di 7 wilayah adat di Tanah Papua.</p></div>
             </div>
             <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
-                <div class="p-5 bg-neutral-50">
-                    <h3 class="font-display font-bold text-neutral-900 flex items-center gap-3">
-                        <span class="w-7 h-7 bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
-                        Di mana saja wilayah kerja PPMA Papua?
-                    </h3>
-                </div>
-                <div class="p-5">
-                    <p class="text-neutral-600 leading-relaxed">PPMA Papua berkantor pusat di Jl. Pramuka No. 18, Buper Waena, Kota Jayapura, dan bekerja di beberapa kabupaten di Provinsi Papua (Kabupaten Jayapura dan Kabupaten Sarmi) serta Provinsi Papua Selatan (Kabupaten Mappi).</p>
-                </div>
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>Bagaimana cara berdonasi untuk program PPMA Papua?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">Anda dapat berdonasi melalui halaman <a href="/donasi" class="text-secondary underline font-semibold">Donasi</a>. Pilih program yang ingin didukung, lakukan transfer ke rekening BNI yang tertera, lalu isi formulir konfirmasi donasi. Semua donasi dikelola secara transparan dan akuntabel.</p></div>
             </div>
             <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
-                <div class="p-5 bg-neutral-50">
-                    <h3 class="font-display font-bold text-neutral-900 flex items-center gap-3">
-                        <span class="w-7 h-7 bg-primary-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
-                        Bagaimana cara bermitra dengan PPMA Papua?
-                    </h3>
-                </div>
-                <div class="p-5">
-                    <p class="text-neutral-600 leading-relaxed">PPMA Papua terbuka untuk kemitraan dengan lembaga internasional, pemerintah, organisasi masyarakat sipil, dan sektor swasta. Silakan hubungi kami melalui halaman <a href="/kontak" class="text-primary-500 underline font-semibold">Kontak</a> untuk mendiskusikan peluang kolaborasi.</p>
-                </div>
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>Apakah konten blog berasal dari PPMA Papua sendiri?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">Blog PPMA Papua memuat artikel asli yang ditulis oleh tim kami, serta artikel yang di-<em>repost</em> dari media dan portal berita tepercaya seperti Antara News, Mongabay Indonesia, Jubi, dan lainnya. Setiap artikel yang bersumber dari pihak ketiga selalu mencantumkan nama sumber dan tautan asli sebagai bentuk penghormatan terhadap hak cipta dan transparansi informasi.</p></div>
+            </div>
+            <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>Bagaimana cara bermitra dengan PPMA Papua?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">PPMA Papua terbuka untuk kemitraan dengan lembaga internasional, pemerintah, organisasi masyarakat sipil, dan sektor swasta yang memiliki komitmen terhadap pemberdayaan masyarakat adat Papua. Silakan hubungi kami melalui halaman <a href="/kontak" class="text-secondary underline font-semibold">Kontak</a> atau WhatsApp di <strong>+62 821-9750-1692</strong>.</p></div>
+            </div>
+            <div class="rounded-lg overflow-hidden border border-neutral-200 fade-in">
+                <div class="p-5 bg-neutral-50"><h3 class="font-display font-bold text-neutral-900 flex items-center gap-3"><span class="w-7 h-7 bg-secondary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">7</span>Apakah website ini menyediakan sitemap untuk SEO?</h3></div>
+                <div class="p-5"><p class="text-neutral-600 leading-relaxed">Ya, kami menyediakan <a href="/sitemap.xml" class="text-secondary underline font-semibold">sitemap XML</a> untuk membantu mesin pencari mengindeks seluruh halaman publik. Kami juga memiliki halaman <a href="/peta-situs" class="text-secondary underline font-semibold">Peta Situs</a> yang menampilkan daftar lengkap halaman untuk navigasi pengunjung.</p></div>
             </div>
         </div>
     </div>
@@ -663,35 +491,53 @@ HTML,
             [
                 'judul'     => 'Disclaimer',
                 'slug'      => 'disclaimer',
-                'keterangan'=> 'Informasi penting mengenai penggunaan website PPMA Papua',
+                'keterangan'=> 'Syarat penggunaan, hak cipta, kebijakan konten reposted, dan informasi hukum website PPMA Papua',
                 'urutan'    => 6,
                 'konten'    => <<<'HTML'
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="space-y-8 text-neutral-600 leading-relaxed">
+        <div class="mb-12 fade-in text-center">
+            <p class="text-xs font-semibold tracking-widest uppercase text-secondary mb-2"><i class="fa-solid fa-shield-halved mr-2"></i>Ketentuan Hukum</p>
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-neutral-900">Disclaimer &amp; Kebijakan Penggunaan</h2>
+            <p class="text-neutral-500 mt-3 max-w-2xl mx-auto">Harap baca ketentuan berikut sebelum menggunakan website PPMA Papua.</p>
+        </div>
+        <div class="max-w-4xl mx-auto space-y-8 text-neutral-600 leading-relaxed">
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Informasi Umum</h2>
-                <p>Website ini dikelola oleh Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua (PPMA Papua) sebagai sarana informasi dan komunikasi resmi lembaga. Seluruh konten yang ditampilkan di website ini, termasuk teks, gambar, dan dokumen, merupakan milik PPMA Papua atau digunakan dengan izin dari pemilik yang sah.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-info-circle text-secondary mr-2"></i>Informasi Umum</h2>
+                <p>Website ini dikelola oleh Perkumpulan Terbatas untuk Pengkajian dan Pemberdayaan Masyarakat Adat Papua (PPMA Papua) sebagai sarana informasi dan komunikasi resmi lembaga. Seluruh konten yang ditampilkan, termasuk teks, gambar, dan dokumen, merupakan milik PPMA Papua atau digunakan dengan izin dari pemilik yang sah, kecuali dinyatakan lain.</p>
             </div>
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Keakuratan Informasi</h2>
-                <p>PPMA Papua berupaya menjaga keakuratan dan kemutakhiran informasi yang dipublikasikan di website ini. Namun, kami tidak dapat menjamin bahwa seluruh informasi selalu akurat, lengkap, atau terbaru. Penggunaan informasi dari website ini sepenuhnya menjadi tanggung jawab pengguna.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-check-double text-secondary mr-2"></i>Keakuratan Informasi</h2>
+                <p>PPMA Papua berupaya menjaga keakuratan dan kemutakhiran informasi yang dipublikasikan. Namun, kami tidak dapat menjamin bahwa seluruh informasi selalu akurat, lengkap, atau terbaru. Penggunaan informasi dari website ini sepenuhnya menjadi tanggung jawab pengguna.</p>
             </div>
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Donasi</h2>
-                <p>Informasi terkait program donasi yang ditampilkan di website ini bersifat indikatif. PPMA Papua berkomitmen mengelola seluruh dana donasi secara transparan dan akuntabel sesuai dengan program yang dipilih oleh donatur. Donasi yang telah dikirimkan tidak dapat dikembalikan (non-refundable) kecuali terjadi kesalahan teknis yang dapat dibuktikan.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-newspaper text-secondary mr-2"></i>Konten Blog &amp; Artikel Reposted</h2>
+                <p>Halaman blog PPMA Papua memuat dua jenis konten:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                    <li><strong>Konten Asli</strong> — artikel yang ditulis langsung oleh tim PPMA Papua.</li>
+                    <li><strong>Konten Reposted</strong> — artikel yang diambil dari media dan portal berita pihak ketiga (seperti Antara News, Mongabay Indonesia, Jubi, Papua.go.id, dan media lainnya) yang berkaitan dengan kegiatan dan isu masyarakat adat Papua.</li>
+                </ul>
+                <p class="mt-3">Setiap konten reposted selalu mencantumkan <strong>nama sumber asli</strong> dan <strong>tautan ke artikel asli</strong> sebagai bentuk penghormatan terhadap hak cipta penulis dan penerbit asli. Konten reposted dimuat semata-mata untuk tujuan edukasi dan penyebaran informasi, bukan untuk tujuan komersial. Apabila pemilik konten asli keberatan, silakan hubungi kami melalui halaman <a href="/kontak" class="text-secondary underline font-semibold">Kontak</a> untuk penghapusan.</p>
             </div>
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Tautan Eksternal</h2>
-                <p>Website ini mungkin memuat tautan ke situs web pihak ketiga. PPMA Papua tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik situs web eksternal tersebut.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-heart text-secondary mr-2"></i>Donasi</h2>
+                <p>Informasi terkait program donasi bersifat indikatif. PPMA Papua berkomitmen mengelola seluruh dana donasi secara transparan dan akuntabel sesuai program yang dipilih donatur. Donasi yang telah dikirimkan tidak dapat dikembalikan (<em>non-refundable</em>) kecuali terjadi kesalahan teknis yang dapat dibuktikan.</p>
             </div>
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Hak Cipta</h2>
-                <p>Seluruh konten di website ini dilindungi oleh hak cipta. Dilarang memperbanyak, mendistribusikan, atau menggunakan konten website ini untuk tujuan komersial tanpa izin tertulis dari PPMA Papua. Penggunaan untuk tujuan edukasi dan non-komersial diperbolehkan dengan mencantumkan kredit kepada PPMA Papua.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-arrow-up-right-from-square text-secondary mr-2"></i>Tautan Eksternal</h2>
+                <p>Website ini mungkin memuat tautan ke situs web pihak ketiga. PPMA Papua tidak bertanggung jawab atas konten, kebijakan privasi, atau praktik situs web eksternal tersebut. Pengguna disarankan membaca kebijakan masing-masing situs sebelum memberikan informasi pribadi.</p>
             </div>
             <div class="fade-in">
-                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3">Kontak</h2>
-                <p>Jika Anda memiliki pertanyaan mengenai disclaimer ini, silakan hubungi kami melalui halaman <a href="/kontak" class="text-primary-500 underline font-semibold">Kontak</a>.</p>
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-copyright text-secondary mr-2"></i>Hak Cipta &amp; Lisensi</h2>
+                <p>Seluruh konten asli di website ini dilindungi oleh hak cipta &copy; PPMA Papua. Dilarang memperbanyak, mendistribusikan, atau menggunakan konten untuk tujuan komersial tanpa izin tertulis. Penggunaan untuk tujuan edukasi dan non-komersial diperbolehkan dengan mencantumkan kredit dan tautan balik ke website PPMA Papua.</p>
+            </div>
+            <div class="fade-in">
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-user-shield text-secondary mr-2"></i>Privasi Data</h2>
+                <p>Data pribadi yang Anda berikan melalui formulir donasi atau kontak hanya digunakan untuk keperluan internal PPMA Papua dan tidak akan dibagikan kepada pihak ketiga tanpa persetujuan Anda, kecuali diwajibkan oleh hukum yang berlaku di Indonesia.</p>
+            </div>
+            <div class="fade-in">
+                <h2 class="text-xl font-display font-bold text-neutral-900 mb-3"><i class="fa-solid fa-envelope text-secondary mr-2"></i>Kontak</h2>
+                <p>Jika Anda memiliki pertanyaan mengenai disclaimer ini atau ingin melaporkan pelanggaran hak cipta, silakan hubungi kami melalui halaman <a href="/kontak" class="text-secondary underline font-semibold">Kontak</a> atau WhatsApp di <strong>+62 821-9750-1692</strong>.</p>
             </div>
         </div>
     </div>

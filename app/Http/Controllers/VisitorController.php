@@ -187,40 +187,13 @@ class VisitorController extends Controller
         return redirect()->route('donasi')->with('success', 'Terima kasih! Konfirmasi donasi Anda telah kami terima dan sedang diproses.');
     }
 
-    public function sejarah()
-    {
-        $halaman = Halaman::where('slug', 'sejarah')
-            ->where('is_active', true)
-            ->firstOrFail();
-
-        return view('visitor.halaman', compact('halaman'));
-    }
-
-    public function profil()
-    {
-        $halaman = Halaman::where('slug', 'profil')
-            ->where('is_active', true)
-            ->firstOrFail();
-
-        return view('visitor.halaman', compact('halaman'));
-    }
-
-    public function bidangKerja()
-    {
-        $halaman = Halaman::where('slug', 'bidang-kerja')
-            ->where('is_active', true)
-            ->firstOrFail();
-
-        return view('visitor.halaman', compact('halaman'));
-    }
-
     public function mitra()
     {
         $halaman = Halaman::where('slug', 'mitra')
             ->where('is_active', true)
             ->firstOrFail();
 
-        return view('visitor.halaman', compact('halaman'));
+        return view('visitor.mitra', compact('halaman'));
     }
 
     public function halaman(string $slug)

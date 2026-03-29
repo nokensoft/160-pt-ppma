@@ -314,11 +314,11 @@
                         <a href="{{ route("{$dashPrefix}.dokumentasi") }}" class="hover:text-primary transition-colors">Dokumentasi</a>
                         @if ($faqPage)
                             <span class="text-gray-300">|</span>
-                            <a href="{{ route('halaman.show', $faqPage->slug) }}" target="_blank" class="hover:text-primary transition-colors">FAQ</a>
+                            <a href="{{ route('faq') }}" target="_blank" class="hover:text-primary transition-colors">FAQ</a>
                         @endif
                         @if ($disclaimerPage)
                             <span class="text-gray-300">|</span>
-                            <a href="{{ route('halaman.show', $disclaimerPage->slug) }}" target="_blank" class="hover:text-primary transition-colors">Disclaimer</a>
+                            <a href="{{ route('disclaimer') }}" target="_blank" class="hover:text-primary transition-colors">Disclaimer</a>
                         @endif
                         <span class="text-gray-300">|</span>
                         <a href="{{ route('peta-situs') }}" target="_blank" class="hover:text-primary transition-colors">Site Map</a>

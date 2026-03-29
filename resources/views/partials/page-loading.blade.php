@@ -1,29 +1,43 @@
-{{-- Page Loading Overlay --}}
-<div id="page-loading" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
-    <div class="flex space-x-3">
-        <span class="loading-circle bg-blue-600"></span>
-        <span class="loading-circle bg-yellow-400"></span>
-        <span class="loading-circle bg-black"></span>
-        <span class="loading-circle bg-green-600"></span>
+{{-- Page Loading Overlay — Glowing Rings --}}
+<div id="page-loading" class="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-900 transition-opacity duration-500">
+    <div class="loading-rings">
+        <div class="ring ring-outer"></div>
+        <div class="ring ring-inner"></div>
     </div>
 </div>
 
 <style>
-    .loading-circle {
-        width: 18px;
-        height: 18px;
-        border-radius: 9999px;
-        display: inline-block;
-        animation: loadingBounce 1.2s ease-in-out infinite;
+    .loading-rings {
+        position: relative;
+        width: 90px;
+        height: 90px;
     }
-    .loading-circle:nth-child(1) { animation-delay: 0s; }
-    .loading-circle:nth-child(2) { animation-delay: 0.15s; }
-    .loading-circle:nth-child(3) { animation-delay: 0.3s; }
-    .loading-circle:nth-child(4) { animation-delay: 0.45s; }
-
-    @keyframes loadingBounce {
-        0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-        40% { transform: scale(1.2); opacity: 1; }
+    .ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid transparent;
+    }
+    .ring-outer {
+        inset: 0;
+        border-top-color: #15803d;
+        border-right-color: #15803d;
+        animation: ringSpinOuter 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        filter: drop-shadow(0 0 6px rgba(21, 128, 61, 0.6));
+    }
+    .ring-inner {
+        inset: 14px;
+        border-bottom-color: #22c55e;
+        border-left-color: #22c55e;
+        animation: ringSpinInner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.6));
+    }
+    @keyframes ringSpinOuter {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @keyframes ringSpinInner {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(-360deg); }
     }
 </style>
 

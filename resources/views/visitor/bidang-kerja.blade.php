@@ -4,8 +4,8 @@
 @section('seo-description', 'Program kerja PPMA Papua: PMA, KPP, PEMA, PPA, dan PISD untuk pemberdayaan masyarakat adat Papua.')
 
 @section('content')
-    <div class="bg-secondary py-16">
-        <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-primary py-16 relative overflow-hidden"><div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <span class="text-white/70 text-lg uppercase tracking-widest"><a href="{{ route('beranda') }}" class="hover:text-white">Beranda</a> › Tentang › Bidang Kerja</span>
             <h1 class="text-3xl md:text-4xl font-display font-bold text-white mt-3">Pilar Program Kerja</h1>
             <p class="text-white/70 text-lg mt-3 max-w-xl">Lima pilar program strategis PPMA Papua untuk pemberdayaan masyarakat adat di 7 wilayah adat Tanah Papua.</p>

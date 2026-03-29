@@ -19,8 +19,10 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
     @include('partials.hero-slider')
 
     {{-- TENTANG PPMA --}}
-    <section id="tentang" class="bg-primary text-white py-20 scroll-mt-20">
-        <div class="container mx-auto px-6">
+    <section id="tentang" class="bg-primary text-white py-20 scroll-mt-20 relative overflow-hidden">
+        {{-- Grid Background --}}
+        <div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="fade-in">
                     <span class="text-secondary font-bold tracking-[0.2em] uppercase text-lg">Tentang Kami</span>
@@ -235,31 +237,6 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                     </div>
                 @endforelse
             </div>
-        </div>
-    </section>
-
-    {{-- CTA KOLABORASI --}}
-    <section id="kolaborasi" class="relative text-white py-20 scroll-mt-20 overflow-hidden">
-        <img src="{{ asset('img/illustration/1.png') }}" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1920x600'">
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="relative z-10 container mx-auto px-6 text-center fade-in">
-            <h2 class="text-3xl font-bold mb-8 uppercase tracking-widest text-white">Mari Berkolaborasi</h2>
-            <p class="mb-8 text-white/70 max-w-xl mx-auto">Jalin kemitraan untuk penguatan hak-hak masyarakat adat di Tanah Papua. Bersama kita wujudkan kedaulatan yang berdampak nyata.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="{{ route('donasi') }}" class="bg-secondary px-10 py-4 font-bold uppercase tracking-wider hover:bg-opacity-90 transition">
-                    <i class="fa-solid fa-heart mr-2"></i>Donasi Sekarang
-                </a>
-                <a href="{{ route('kontak') }}" class="border border-white/40 px-10 py-4 font-bold uppercase tracking-wider hover:bg-white/10 transition">
-                    <i class="fa-solid fa-envelope mr-2"></i>Hubungi Kami
-                </a>
-            </div>
-            <p class="mt-8 text-white/50 text-lg">
-                @if (!empty($situs['alamat']))
-                    {{ $situs['alamat'] }}
-                @else
-                    Jl. Pramuka No. 18, Buper Waena, Kota Jayapura, Papua
-                @endif
-            </p>
         </div>
     </section>
 

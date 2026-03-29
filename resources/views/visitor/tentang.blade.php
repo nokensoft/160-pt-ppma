@@ -6,8 +6,8 @@
 @section('content')
 
     {{-- Hero Banner --}}
-    <div class="bg-secondary py-16">
-        <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-primary py-16 relative overflow-hidden"><div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <span class="text-white/70 text-lg uppercase tracking-widest">
                 <a href="{{ route('beranda') }}" class="hover:text-white">Beranda</a> › Tentang Kami
             </span>
@@ -122,14 +122,14 @@
                     <h3 class="font-display font-bold text-neutral-900 mb-1">Profil Lembaga</h3>
                     <p class="text-neutral-500 text-lg">Visi, misi, wilayah kerja, dan identitas organisasi.</p>
                 </a>
-                <a href="{{ route('tokoh') }}" class="bg-white shadow-card card-hover border border-neutral-100 p-6 fade-in group">
+                <a href="{{ route('kepengurusan') }}" class="bg-white shadow-card card-hover border border-neutral-100 p-6 fade-in group">
                     <div class="w-10 h-10 bg-green-50 flex items-center justify-center mb-4 group-hover:bg-secondary transition-colors">
                         <i class="fa-solid fa-user-tie text-secondary group-hover:text-white transition-colors"></i>
                     </div>
                     <h3 class="font-display font-bold text-neutral-900 mb-1">Direktur</h3>
                     <p class="text-neutral-500 text-lg">Direktur PPMA Papua dari masa ke masa sejak 1984.</p>
                 </a>
-                <a href="{{ route('bidang-kerja') }}" class="bg-white shadow-card card-hover border border-neutral-100 p-6 fade-in group">
+                <a href="{{ route('pilar-kerja') }}" class="bg-white shadow-card card-hover border border-neutral-100 p-6 fade-in group">
                     <div class="w-10 h-10 bg-accent-50 flex items-center justify-center mb-4 group-hover:bg-accent-400 transition-colors">
                         <i class="fa-solid fa-list-check text-accent-400 group-hover:text-white transition-colors"></i>
                     </div>
@@ -140,19 +140,4 @@
         </div>
     </section>
 
-    {{-- CTA --}}
-    <section class="bg-secondary py-14">
-        <div class="max-w-4xl mx-auto px-6 text-center fade-in">
-            <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-3">Bersama Membangun Papua</h2>
-            <p class="text-white/70 text-lg mb-8">Dukung program pemberdayaan masyarakat adat Papua. Setiap kontribusi membantu mewujudkan kemandirian ekonomi dan keadilan sosial.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="{{ route('donasi') }}" class="bg-white text-secondary px-8 py-3 text-lg font-semibold hover:bg-neutral-100 transition-colors shadow-card">
-                    <i class="fa-solid fa-heart mr-2"></i>Donasi Sekarang
-                </a>
-                <a href="{{ route('kontak') }}" class="border border-white/40 text-white px-8 py-3 text-lg font-semibold hover:bg-white/10 transition-colors">
-                    <i class="fa-solid fa-envelope mr-2"></i>Hubungi Kami
-                </a>
-            </div>
-        </div>
-    </section>
 @endsection

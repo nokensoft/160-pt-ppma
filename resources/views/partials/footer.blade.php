@@ -14,10 +14,29 @@
     @endif
 </div>
 
+{{-- CTA Bermitra --}}
+<section class="bg-primary text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="container mx-auto px-6 text-center relative z-10 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Tertarik Bermitra dengan PPMA Papua?</h2>
+        <p class="text-white/70 max-w-xl mx-auto mb-8">Kami terbuka untuk kolaborasi dengan lembaga, pemerintah, dan sektor swasta yang memiliki komitmen terhadap pemberdayaan masyarakat adat Papua.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{{ route('kontak') }}" class="bg-secondary text-white px-8 py-4 font-bold hover:bg-secondary/90 transition-all shadow-lg inline-flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i> Hubungi Kami
+            </a>
+            <a href="{{ route('donasi') }}" class="border border-white/30 text-white px-8 py-4 font-bold hover:bg-white/10 transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-heart"></i> Donasi Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
 <footer>
-    {{-- Top Footer (Hijau Tua) --}}
-    <div class="bg-secondary py-12">
-        <div class="container mx-auto px-6">
+    {{-- Top Footer (Liquid Glass) --}}
+    <div class="relative py-12 overflow-hidden" style="background: rgba(21, 128, 61, 0.92); backdrop-filter: blur(16px) saturate(1.6); -webkit-backdrop-filter: blur(16px) saturate(1.6);">
+        {{-- Grid Background --}}
+        <div class="absolute inset-0 opacity-[0.07]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="container mx-auto px-6 relative z-10">
             {{-- Nama & Keterangan (Center) --}}
             <div class="text-center mb-8">
                 {{-- Logo --}}
@@ -45,7 +64,10 @@
                 <a href="{{ route('galeri') }}" class="hover:text-white transition">Galeri</a>
                 <a href="{{ route('donasi') }}" class="hover:text-white transition">Donasi</a>
                 @foreach ($halamanFooter->whereNotIn('slug', ['sejarah','profil','bidang-kerja','mitra']) as $hPage)
-                    <a href="{{ route('halaman.show', $hPage->slug) }}" class="hover:text-white transition">{{ $hPage->judul }}</a>
+                    @php
+                        try { $hpUrl = route($hPage->slug); } catch (\Exception $e) { $hpUrl = route('halaman.show', $hPage->slug); }
+                    @endphp
+                    <a href="{{ $hpUrl }}" class="hover:text-white transition">{{ $hPage->judul }}</a>
                 @endforeach
             </div>
 
@@ -57,7 +79,7 @@
                 </div>
                 <div class="bg-white/10 px-5 py-3 flex items-center gap-2 text-white/80 text-lg rounded-lg">
                     <i class="fa-solid fa-phone text-white"></i>
-                    <span>{{ $situs['telepon'] ?? '0967-5170510' }}</span>
+                    <span>{{ $situs['telepon'] ?? '+62 821-9750-1692' }}</span>
                 </div>
                 @if (!empty($situs['email']))
                 <div class="bg-white/10 px-5 py-3 flex items-center gap-2 text-white/80 text-lg rounded-lg">
@@ -69,41 +91,44 @@
         </div>
     </div>
 
-    {{-- Bottom Footer (Dark) --}}
-    <div class="bg-primary py-6">
+    {{-- Bottom Footer (Liquid Glass Dark) --}}
+    <div class="py-6" style="background: rgba(15, 90, 43, 0.95); backdrop-filter: blur(16px) saturate(1.5); -webkit-backdrop-filter: blur(16px) saturate(1.5); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-white/50 text-lg">&copy; {{ date('Y') }} {{ $situs['nama_situs'] ?? 'PPMA Papua' }}. Semua hak dilindungi.</p>
                 <div class="flex items-center gap-4">
-                    {{-- Sosmed --}}
+                    {{-- Media Sosial: Instagram, Facebook, YouTube --}}
                     <div class="flex items-center gap-2">
-                        @if (!empty($situs['sosmed_facebook']))
-                            <a href="{{ $situs['sosmed_facebook'] }}" target="_blank" class="w-10 h-10 bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-facebook-f"></i></a>
-                        @endif
                         @if (!empty($situs['sosmed_instagram']))
-                            <a href="{{ $situs['sosmed_instagram'] }}" target="_blank" class="w-10 h-10 bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="{{ $situs['sosmed_instagram'] }}" target="_blank" rel="noopener noreferrer"
+                               class="w-9 h-9 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 text-white flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-instagram text-base"></i>
+                            </a>
+                        @else
+                            <span class="w-9 h-9 rounded-full bg-white/10 text-white/30 flex items-center justify-center cursor-default">
+                                <i class="fa-brands fa-instagram text-base"></i>
+                            </span>
+                        @endif
+                        @if (!empty($situs['sosmed_facebook']))
+                            <a href="{{ $situs['sosmed_facebook'] }}" target="_blank" rel="noopener noreferrer"
+                               class="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600 text-white flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-facebook-f text-base"></i>
+                            </a>
+                        @else
+                            <span class="w-9 h-9 rounded-full bg-white/10 text-white/30 flex items-center justify-center cursor-default">
+                                <i class="fa-brands fa-facebook-f text-base"></i>
+                            </span>
                         @endif
                         @if (!empty($situs['sosmed_youtube']))
-                            <a href="{{ $situs['sosmed_youtube'] }}" target="_blank" class="w-10 h-10 bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="{{ $situs['sosmed_youtube'] }}" target="_blank" rel="noopener noreferrer"
+                               class="w-9 h-9 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-youtube text-base"></i>
+                            </a>
+                        @else
+                            <span class="w-9 h-9 rounded-full bg-white/10 text-white/30 flex items-center justify-center cursor-default">
+                                <i class="fa-brands fa-youtube text-base"></i>
+                            </span>
                         @endif
-                        @if (!empty($situs['sosmed_twitter']))
-                            <a href="{{ $situs['sosmed_twitter'] }}" target="_blank" class="w-10 h-10 bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-x-twitter"></i></a>
-                        @endif
-                    </div>
-                    @php
-                        $faqPage = $halamanFooter->firstWhere('slug', 'faq');
-                        $disclaimerPage = $halamanFooter->firstWhere('slug', 'disclaimer');
-                    @endphp
-                    <div class="flex items-center gap-3 text-lg text-white/50">
-                        @if ($faqPage)
-                            <a href="{{ route('halaman.show', $faqPage->slug) }}" class="hover:text-white transition">{{ $faqPage->judul }}</a>
-                            <span>&middot;</span>
-                        @endif
-                        @if ($disclaimerPage)
-                            <a href="{{ route('halaman.show', $disclaimerPage->slug) }}" class="hover:text-white transition">{{ $disclaimerPage->judul }}</a>
-                            <span>&middot;</span>
-                        @endif
-                        <a href="{{ route('peta-situs') }}" class="hover:text-white transition">Peta Situs</a>
                     </div>
                 </div>
             </div>
