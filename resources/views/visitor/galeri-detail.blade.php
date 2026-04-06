@@ -79,7 +79,7 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                         <div @click="open({{ $index }})"
                              class="relative group overflow-hidden rounded-lg cursor-pointer">
                             <img src="{{ asset('storage/' . $m->file_path) }}"
-                                 class="w-full h-52 object-cover group-hover:scale-110 transition duration-500"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                                  alt="{{ $galeri->judul }} - Foto {{ $index + 1 }}"
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400'">
                             <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/50 transition flex items-center justify-center">

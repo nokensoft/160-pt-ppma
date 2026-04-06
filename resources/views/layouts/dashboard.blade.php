@@ -93,9 +93,9 @@
             {{-- Logo --}}
             <div class="px-6 py-5 border-b border-gray-800 flex items-center space-x-3">
                 @if (!empty($situs['logo']))
-                    <img src="{{ asset('storage/' . $situs['logo']) }}" alt="Logo {{ $situs['nama_situs'] ?? 'PPMA Papua' }}" class="h-10">
+                    <img src="{{ asset('storage/' . $situs['logo']) }}" alt="Logo {{ $situs['nama_situs'] ?? 'PPMA Papua' }}" class="h-10 w-10 object-cover rounded-full ring-2 ring-primary/40 shrink-0">
                 @else
-                    <img src="https://placehold.co/40x40" alt="Logo" class="h-10 object-contain">
+                    <img src="{{ asset('img/logo-ppma-papua-2026.png') }}" alt="Logo" class="h-10 w-10 object-cover rounded-full ring-2 ring-primary/40 shrink-0">
                 @endif
                 <div>
                     <span class="font-bold text-lg leading-tight text-primary block">{{ $situs['nama_situs'] ?? 'PPMA Papua' }}</span>

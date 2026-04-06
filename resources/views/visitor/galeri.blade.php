@@ -82,7 +82,7 @@
                        class="group bg-white shadow-card card-hover border border-neutral-100 rounded-lg overflow-hidden fade-in">
                         <div class="relative overflow-hidden">
                             <img src="{{ $coverUrl }}" alt="{{ $album->judul }}"
-                                 class="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x400'">
                             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
                                 <i class="fa-solid fa-images text-white text-2xl opacity-0 group-hover:opacity-100 transition"></i>

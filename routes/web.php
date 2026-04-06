@@ -194,6 +194,6 @@ Route::prefix('penulis')->name('penulis.')->middleware(['auth.custom', 'role:pen
     Route::get('/profil', [ProfilController::class, 'edit'])->name('profil');
     Route::put('/profil', [ProfilController::class, 'update'])->name('profil.update');
 
-    // Dokumentasi
-    Route::view('/dokumentasi', 'admin.dokumentasi')->name('dokumentasi');
+    // Dokumentasi / Panduan Penggunaan
+    Route::view('/dokumentasi', 'penulis.dokumentasi')->name('dokumentasi');
 });

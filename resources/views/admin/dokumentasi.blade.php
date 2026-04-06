@@ -169,13 +169,14 @@
                     <p class="text-lg font-bold uppercase tracking-widest text-gray-400 mb-2">Admin Master</p>
                     @php
                         $fiturAdmin = [
-                            ['icon' => 'fa-tachometer-alt', 'title' => 'Dasbor', 'desc' => 'Ringkasan data, aktivitas terbaru, info sistem'],
+                            ['icon' => 'fa-tachometer-alt', 'title' => 'Dasbor', 'desc' => 'Ringkasan data lengkap (pengguna, halaman, blog, galeri, media, donasi, pengunjung), aktivitas login, blog terbaru, donasi terbaru, aksi cepat, info sistem'],
                             ['icon' => 'fa-file-alt', 'title' => 'Halaman (CMS)', 'desc' => 'Kelola halaman dinamis: sejarah, profil, mitra, bidang kerja, soft delete & restore'],
-                            ['icon' => 'fa-cog', 'title' => 'Pengaturan Situs', 'desc' => 'Nama, deskripsi, kontak, sosmed, logo, SEO'],
+                            ['icon' => 'fa-cog', 'title' => 'Pengaturan Situs', 'desc' => 'Nama, deskripsi, kontak, sosmed, logo, peta lokasi, SEO'],
                             ['icon' => 'fa-database', 'title' => 'Backup Database', 'desc' => 'Buat, download, hapus, dan restore backup SQL'],
+                            ['icon' => 'fa-folder-open', 'title' => 'Backup Storage', 'desc' => 'Buat, download, hapus, restore backup ZIP storage, dan buat storage link (symlink)'],
                             ['icon' => 'fa-users', 'title' => 'Kelola Pengguna', 'desc' => 'CRUD pengguna dengan soft delete, restore & force delete'],
                             ['icon' => 'fa-history', 'title' => 'Aktivitas Login', 'desc' => 'Log riwayat login seluruh pengguna'],
-                            ['icon' => 'fa-chart-bar', 'title' => 'Statistik Pengunjung', 'desc' => 'Grafik harian, mingguan, bulanan, tahunan'],
+                            ['icon' => 'fa-chart-bar', 'title' => 'Statistik Pengunjung', 'desc' => 'Statistik pengunjung harian, mingguan, bulanan, tahunan'],
                             ['icon' => 'fa-user-edit', 'title' => 'Profil', 'desc' => 'Edit profil akun (nama, email, password, nomor HP, keterangan singkat)'],
                         ];
                     @endphp
@@ -196,7 +197,7 @@
                         $fiturPenulis = [
                             ['icon' => 'fa-newspaper', 'title' => 'Artikel / Blog', 'desc' => 'CRUD berita dengan status terbit/draft, soft delete, restore & force delete'],
                             ['icon' => 'fa-tags', 'title' => 'Kategori Berita', 'desc' => 'CRUD kategori berita dengan soft delete, restore & force delete'],
-                            ['icon' => 'fa-photo-video', 'title' => 'Media',
+                            ['icon' => 'fa-photo-video', 'title' => 'Media', 'desc' => 'Upload & kelola media (gambar/video), konversi otomatis ke WebP, AJAX upload, soft delete & restore'],
                             ['icon' => 'fa-images', 'title' => 'Galeri', 'desc' => 'CRUD album galeri dengan relasi media, kategori, toggle publik, soft delete & restore'],
                             ['icon' => 'fa-hand-holding-heart', 'title' => 'Program Donasi', 'desc' => 'CRUD program donasi dengan soft delete, restore & force delete'],
                             ['icon' => 'fa-heart', 'title' => 'Kelola Donasi', 'desc' => 'Lihat detail, konfirmasi, tolak, edit pesan, toggle publik/anonim, bukti transfer, soft delete & restore'],
