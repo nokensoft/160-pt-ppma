@@ -18,7 +18,7 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
     {{-- HERO SLIDER --}}
     @include('partials.hero-slider')
 
-    
+
 
     {{-- BLOG / ARTIKEL --}}
     <section id="artikel" class="bg-white py-20 border-t border-gray-100 scroll-mt-20">
