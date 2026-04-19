@@ -18,6 +18,48 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
     {{-- HERO SLIDER --}}
     @include('partials.hero-slider')
 
+    
+
+    {{-- BLOG / ARTIKEL --}}
+    <section id="artikel" class="bg-white py-20 border-t border-gray-100 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in">
+                <div class="max-w-xl">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-lg">Postingan</span>
+                    <h2 class="text-3xl font-bold mt-2 uppercase">Artikel & Kabar Berita</h2>
+                    <div class="h-1 w-20 bg-primary mt-4"></div>
+                </div>
+                <a href="{{ route('berita') }}" class="text-primary font-bold uppercase tracking-widest text-lg border-b-2 border-primary hover:text-secondary hover:border-secondary transition pb-1">
+                    Lihat Semua Artikel <i class="fa-solid fa-arrow-right ml-2 text-lg"></i>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                @forelse ($beritaTerbaru as $b)
+                    <a href="{{ route('berita.detail', $b->slug) }}" class="group cursor-pointer fade-in block">
+                        <div class="relative overflow-hidden bg-gray-100 mb-6 shadow-md">
+                            <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                            {{-- @if ($b->kategori)
+                                <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-lg font-bold uppercase tracking-tighter">{{ $b->kategori->nama }}</div>
+                            @endif --}}
+                        </div>
+                        <div class="space-y-3">
+                            {{-- <time class="text-gray-400 text-lg uppercase tracking-widest">{{ $b->tanggal_terbit?->translatedFormat('d F Y') }}</time> --}}
+                            <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition line-clamp-2">{{ $b->judul }}</h3>
+                            @if ($b->ringkasan)
+                                <p class="text-gray-500 line-clamp-3">{{ $b->ringkasan }}</p>
+                            @endif
+                            {{-- <a href="{{ route('berita.detail', $b->slug) }}" class="inline-block pt-2 font-bold text-lg uppercase tracking-wider group-hover:translate-x-2 transition-transform">Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-lg"></i></a> --}}
+                        </div>
+                    </a>
+                @empty
+                    <div class="col-span-full text-center py-12 text-gray-400">
+                        <p>Belum ada artikel.</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
     {{-- TENTANG PPMA --}}
     <section id="tentang" class="bg-primary text-white py-20 scroll-mt-20 relative overflow-hidden">
         {{-- Grid Background --}}
@@ -85,100 +127,6 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
         </div>
     </section>
 
-    {{-- 5 PILAR PROGRAM --}}
-    <section id="pilar-program" class="bg-accent py-20 scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="mb-16 text-center fade-in">
-                <span class="text-secondary font-bold tracking-[0.2em] uppercase text-lg">Program Strategis</span>
-                <h2 class="text-3xl font-bold mt-3 mb-4 uppercase">5 Pilar Utama PPMA</h2>
-                <div class="h-1 w-20 bg-primary mx-auto"></div>
-                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Setiap pilar dirancang untuk memperkuat posisi dan hak masyarakat adat di 7 wilayah adat Tanah Papua.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
-                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-                        <i class="fa-solid fa-map-location-dot text-2xl text-secondary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PMA</span>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Masyarakat Adat</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">Pengorganisasian MA, penguatan kelembagaan adat, pendidikan dan pelatihan, pemetaan wilayah adat, kajian sosial budaya, survey potensi ekonomi, dan perencanaan wilayah berbasis kearifan lokal.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
-                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-                        <i class="fa-solid fa-scale-balanced text-2xl text-secondary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">KPP</span>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Kajian Pendidikan Publik</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">Kajian perundang-undangan, pendataan investasi, survey & investigasi konflik, membangun sistem informasi data, pengembangan media dan jaringan, kampanye advokasi.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
-                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-                        <i class="fa-solid fa-seedling text-2xl text-secondary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PEMA</span>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Pengembangan Ekonomi MA</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">Penataan kelembagaan ekonomi, pengembangan sumber potensi ekonomi, pelatihan keterampilan usaha dan desain produk, pengurusan perijinan usaha.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
-                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-                        <i class="fa-solid fa-users-gear text-2xl text-secondary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PPA</span>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Perempuan Adat</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">Pemberdayaan kelompok perempuan melalui organisasi perempuan, pendidikan dan pelatihan gender, peningkatan kapasitas, memperkuat partisipasi perempuan dalam ruang publik.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group md:col-span-2 fade-in">
-                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
-                        <i class="fa-solid fa-building-circle-check text-2xl text-secondary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PISD</span>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Institusi & Sumber Daya</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">Penguatan kapasitas kelembagaan PPMA melalui peningkatan sumber daya staf, pendataan dan pengelolaan aset, pengefektifan manajemen sistem internal, Fund Raising, dan memastikan keberlanjutan organisasi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- BLOG / ARTIKEL --}}
-    <section id="artikel" class="bg-white py-20 border-t border-gray-100 scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in">
-                <div class="max-w-xl">
-                    <span class="text-secondary font-bold tracking-widest uppercase text-lg">Pusat Informasi</span>
-                    <h2 class="text-3xl font-bold mt-2 uppercase">Artikel & Kabar Terbaru</h2>
-                    <div class="h-1 w-20 bg-primary mt-4"></div>
-                </div>
-                <a href="{{ route('berita') }}" class="text-primary font-bold uppercase tracking-widest text-lg border-b-2 border-primary hover:text-secondary hover:border-secondary transition pb-1">
-                    Lihat Semua Artikel <i class="fa-solid fa-arrow-right ml-2 text-lg"></i>
-                </a>
-            </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                @forelse ($beritaTerbaru as $b)
-                    <article class="group cursor-pointer fade-in">
-                        <div class="relative overflow-hidden bg-gray-100 mb-6 shadow-md">
-                            <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
-                            @if ($b->kategori)
-                                <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-lg font-bold uppercase tracking-tighter">{{ $b->kategori->nama }}</div>
-                            @endif
-                        </div>
-                        <div class="space-y-3">
-                            <time class="text-gray-400 text-lg uppercase tracking-widest">{{ $b->tanggal_terbit?->translatedFormat('d F Y') }}</time>
-                            <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition line-clamp-2">{{ $b->judul }}</h3>
-                            @if ($b->ringkasan)
-                                <p class="text-gray-500 line-clamp-3">{{ $b->ringkasan }}</p>
-                            @endif
-                            <a href="{{ route('berita.detail', $b->slug) }}" class="inline-block pt-2 font-bold text-lg uppercase tracking-wider group-hover:translate-x-2 transition-transform">Selengkapnya <i class="fa-solid fa-chevron-right ml-1 text-lg"></i></a>
-                        </div>
-                    </article>
-                @empty
-                    <div class="col-span-full text-center py-12 text-gray-400">
-                        <p>Belum ada artikel.</p>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </section>
-
     {{-- DOKUMENTASI LAPANGAN --}}
     <section class="bg-white py-20 border-t border-gray-100">
         <div class="container mx-auto px-6">
@@ -236,6 +184,60 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                         <p class="text-lg">Belum ada dokumentasi.</p>
                     </div>
                 @endforelse
+            </div>
+        </div>
+    </section>
+
+    {{-- 5 PILAR PROGRAM --}}
+    <section id="pilar-program" class="bg-accent py-20 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="mb-16 text-center fade-in">
+                <span class="text-secondary font-bold tracking-[0.2em] uppercase text-lg">Program Strategis</span>
+                <h2 class="text-3xl font-bold mt-3 mb-4 uppercase">5 Pilar Utama PPMA</h2>
+                <div class="h-1 w-20 bg-primary mx-auto"></div>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Setiap pilar dirancang untuk memperkuat posisi dan hak masyarakat adat di 7 wilayah adat Tanah Papua.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
+                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                        <i class="fa-solid fa-map-location-dot text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PMA</span>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Masyarakat Adat</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Pengorganisasian MA, penguatan kelembagaan adat, pendidikan dan pelatihan, pemetaan wilayah adat, kajian sosial budaya, survey potensi ekonomi, dan perencanaan wilayah berbasis kearifan lokal.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
+                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                        <i class="fa-solid fa-scale-balanced text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">KPP</span>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Kajian Pendidikan Publik</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Kajian perundang-undangan, pendataan investasi, survey & investigasi konflik, membangun sistem informasi data, pengembangan media dan jaringan, kampanye advokasi.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
+                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                        <i class="fa-solid fa-seedling text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PEMA</span>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Pengembangan Ekonomi MA</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Penataan kelembagaan ekonomi, pengembangan sumber potensi ekonomi, pelatihan keterampilan usaha dan desain produk, pengurusan perijinan usaha.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group fade-in">
+                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                        <i class="fa-solid fa-users-gear text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PPA</span>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Perempuan Adat</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Pemberdayaan kelompok perempuan melalui organisasi perempuan, pendidikan dan pelatihan gender, peningkatan kapasitas, memperkuat partisipasi perempuan dalam ruang publik.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md border-b-4 border-transparent hover:border-secondary transition group md:col-span-2 fade-in">
+                    <div class="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+                        <i class="fa-solid fa-building-circle-check text-2xl text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest uppercase text-secondary bg-secondary/10 px-2 py-1 mb-4 inline-block">PISD</span>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Penguatan Institusi & Sumber Daya</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Penguatan kapasitas kelembagaan PPMA melalui peningkatan sumber daya staf, pendataan dan pengelolaan aset, pengefektifan manajemen sistem internal, Fund Raising, dan memastikan keberlanjutan organisasi.</p>
+                </div>
             </div>
         </div>
     </section>

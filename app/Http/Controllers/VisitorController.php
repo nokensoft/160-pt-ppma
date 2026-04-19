@@ -73,16 +73,21 @@ class VisitorController extends Controller
             ->where('status', 'terbit')
             ->firstOrFail();
 
-        $berita->increment('jumlah_dibaca');
+        $kategoriAktif = $berita->kategori;
 
-        $beritaLainnya = Berita::with('kategori', 'media')
+        $berita->increment('jumlah_dibaca');
+        $kategoriList = KategoriBerita::withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])->get();
+
+        $beritaTerkait = Berita::with('kategori', 'media')
             ->where('status', 'terbit')
             ->where('id', '!=', $berita->id)
+            ->when($berita->kategori_berita_id, function ($q) use ($berita) {
+                $q->where('kategori_berita_id', $berita->kategori_berita_id);
+            })
             ->latest('tanggal_terbit')
-            ->take(5)
+            ->take(2)
             ->get();
-
-        return view('visitor.blog.detail', compact('berita', 'beritaLainnya'));
+        return view('visitor.blog.detail', compact('berita', 'beritaTerkait', 'kategoriList', 'kategoriAktif'));
     }
 
     public function galeri()

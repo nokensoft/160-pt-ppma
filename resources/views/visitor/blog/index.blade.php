@@ -37,41 +37,12 @@ if ($kategoriAktif) {
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
-                {{-- Sidebar (Kiri, Sticky) --}}
-                <div class="space-y-6 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start">
-                    <div class="bg-neutral-50 p-6 rounded-lg">
-                        <h4 class="font-display font-bold text-lg uppercase mb-4 pb-3 border-b-2 border-secondary">Cari Berita</h4>
-                        <form method="GET" action="{{ $kategoriAktif ? route('berita.kategori', $kategoriAktif->slug) : route('berita') }}">
-                            <div class="relative">
-                                <input type="text" name="cari" value="{{ request('cari') }}" placeholder="Cari berita..."
-                                       class="w-full border border-neutral-300 p-3 pr-10 text-lg focus:border-secondary focus:outline-none transition">
-                                <button type="submit" class="absolute right-0 top-0 h-full px-3 text-neutral-400 hover:text-secondary transition">
-                                    <i class="fa-solid fa-search text-lg"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="bg-neutral-50 p-6 rounded-lg">
-                        <h4 class="font-display font-bold text-lg uppercase mb-4 pb-3 border-b-2 border-secondary">Kategori</h4>
-                        <ul class="space-y-1">
-                            @foreach ($kategoriList as $kat)
-                                @if ($kat->slug)
-                                    <li>
-                                        <a href="{{ route('berita.kategori', $kat->slug) }}"
-                                           class="flex justify-between items-center py-2 text-lg hover:text-secondary transition {{ $kategoriAktif && $kategoriAktif->id === $kat->id ? 'text-secondary font-semibold' : 'text-neutral-600' }}">
-                                            <span>{{ $kat->nama }}</span>
-                                            <span class="bg-neutral-200 text-neutral-600 text-lg px-2 py-0.5 font-bold">{{ $kat->berita_count }}</span>
-                                        </a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    </div>
-                    <a href="{{ route('berita') }}"
-                       class="{{ !$kategoriAktif ? 'bg-secondary' : 'bg-neutral-800' }} text-white p-4 block hover:bg-secondary transition text-center">
-                        <span class="font-semibold text-lg uppercase">Semua Berita</span>
-                    </a>
-                </div>
+                @include('visitor.blog.partials.sidebar', [
+                    'searchAction' => $kategoriAktif ? route('berita.kategori', $kategoriAktif->slug) : route('berita'),
+                    'kategoriList' => $kategoriList,
+                    'kategoriAktif' => $kategoriAktif,
+                    'isSemuaBeritaActive' => !$kategoriAktif,
+                ])
 
                 {{-- Main Content (Kanan) --}}
                 <div class="lg:col-span-3 order-1 lg:order-2">
@@ -85,15 +56,15 @@ if ($kategoriAktif) {
                     @endif
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         @forelse ($beritaList as $b)
-                            <a href="{{ route('berita.detail', $b->slug) }}" class="bg-white shadow-card card-hover border border-neutral-100 fade-in cursor-pointer block">
-                                <img src="{{ $b->gambar }}" class="w-full aspect-[5/4] object-cover" alt="{{ $b->judul }}">
-                                <div class="p-5">
-                                    <div class="flex items-center gap-2 text-lg text-neutral-400 mb-2">
-                                        <span class="text-secondary font-semibold">{{ $b->kategori?->nama ?? 'Berita' }}</span>
-                                        <span>&bull;</span>
-                                        <span>{{ $b->tanggal_terbit?->translatedFormat('d M Y') }}</span>
-                                    </div>
-                                    <h4 class="font-display font-bold text-neutral-900 line-clamp-2">{{ $b->judul }}</h4>
+                            <a href="{{ route('berita.detail', $b->slug) }}" class="group cursor-pointer fade-in block">
+                                <div class="relative overflow-hidden bg-gray-100 mb-6 shadow-md">
+                                    <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                                </div>
+                                <div class="space-y-3">
+                                    <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition line-clamp-2">{{ $b->judul }}</h3>
+                                    @if ($b->ringkasan)
+                                        <p class="text-gray-500 line-clamp-3">{{ $b->ringkasan }}</p>
+                                    @endif
                                 </div>
                             </a>
                         @empty
