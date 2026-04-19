@@ -6,7 +6,7 @@
         'title' => 'Galeri',
         'createRoute' => route('penulis.galeri.create'),
         'trashedRoute' => route('penulis.galeri.index'),
-        'columns' => ['Cover', 'Judul Album', 'Kategori', 'Jumlah Media', 'Publik', 'Tanggal'],
+        'columns' => ['Cover', 'Judul Album', 'Jumlah Media', 'Publik', 'Tanggal'],
         'paginator' => $galeri,
         'rows' => $galeri->map(function ($g) {
             $cover = $g->media->first();
@@ -45,7 +45,6 @@
                 'cells' => [
                     $preview,
                     $g->judul,
-                    $g->kategori ?? '-',
                     $g->media_count . ' media',
                     $publikCell,
                     $g->created_at->format('d M Y'),

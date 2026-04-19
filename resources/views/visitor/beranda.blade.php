@@ -25,7 +25,6 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in">
                 <div class="max-w-xl">
-                    <span class="text-secondary font-bold tracking-widest uppercase text-lg">Postingan</span>
                     <h2 class="text-3xl font-bold mt-2 uppercase">Artikel & Kabar Berita</h2>
                     <div class="h-1 w-20 bg-primary mt-4"></div>
                 </div>
@@ -154,7 +153,7 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                         }
                     @endphp
                     <a href="{{ route('galeri.detail', $g->slug) }}"
-                       class="group bg-white card-hover border border-gray-100 rounded-lg overflow-hidden fade-in block" style="box-shadow:0 2px 12px rgba(0,0,0,0.08)">
+                       class="group bg-white card-hover border border-gray-100 rounded-none overflow-hidden fade-in block" style="box-shadow:0 2px 12px rgba(0,0,0,0.08)">
                         <div class="relative overflow-hidden">
                             <img src="{{ $coverUrl }}" alt="{{ $g->judul }}"
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
@@ -162,11 +161,6 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
                                 <i class="fa-solid fa-images text-white text-2xl opacity-0 group-hover:opacity-100 transition"></i>
                             </div>
-                            @if (!empty($g->kategori))
-                                <span class="absolute top-3 left-3 bg-secondary/90 text-white text-xs font-bold px-2 py-1 uppercase tracking-wide">
-                                    {{ $g->kategori }}
-                                </span>
-                            @endif
                             <span class="absolute top-3 right-3 bg-black/60 text-white text-xs font-bold px-2 py-1">
                                 <i class="fa-solid fa-image mr-1"></i>{{ $g->media->count() }}
                             </span>

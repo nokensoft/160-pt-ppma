@@ -40,7 +40,7 @@ composer dev       # Jalankan server, queue, logs, dan vite secara bersamaan
 - **KDK** — Buletin Kabar Dari Kampung — media alternatif masyarakat adat Papua sejak 1982, detail edisi, pencarian, filter tahun, counter pembaca & unduhan, download PDF
 - **Papua Today** — Berita dan artikel dengan filter kategori, pencarian, counter pembaca, dan artikel terkait
 - **Donasi** — Form donasi dengan pilihan program, upload bukti transfer, opsi donatur anonim, testimoni donatur publik
-- **Galeri** — Album foto kegiatan dengan filter kategori (Kegiatan, Budaya, Komunitas, Program, Lainnya), pencarian, dan halaman detail
+- **Galeri** — Album foto kegiatan dengan pencarian dan halaman detail
 - **Kontak** — Informasi kontak dan media sosial YPMD IRJA
 - **Peta Situs** — Halaman peta situs (HTML sitemap) untuk navigasi lengkap
 - **SEO** — Dynamic robots.txt dan XML sitemap otomatis untuk seluruh halaman publik
@@ -68,7 +68,7 @@ composer dev       # Jalankan server, queue, logs, dan vite secara bersamaan
 - **Kategori Berita** — CRUD kategori berita dengan soft delete, restore & force delete
 - **Edisi KDK** — CRUD buletin Kabar Dari Kampung dengan cover image, file PDF, counter pembaca & unduhan, soft delete, restore & force delete
 - **Media** — Upload dan kelola file media (gambar), konversi otomatis ke WebP, AJAX upload, endpoint JSON untuk integrasi editor, soft delete & restore
-- **Galeri** — CRUD album galeri dengan relasi media, kategori, toggle publik, soft delete, restore & force delete
+- **Galeri** — CRUD album galeri dengan relasi media, toggle publik, soft delete, restore & force delete
 - **Program Donasi** — CRUD program donasi dengan soft delete, restore & force delete
 - **Kelola Donasi** — Lihat detail, konfirmasi, tolak, edit pesan, toggle publik/anonim, lihat bukti transfer, soft delete, restore & force delete
 - **Statistik Pengunjung** — Grafik kunjungan situs

@@ -24,7 +24,6 @@ class GaleriSeeder extends Seeder
             [
                 'judul'     => 'Alam & Budaya Papua',
                 'deskripsi' => 'Keindahan alam dan kekayaan budaya Papua yang menjadi bagian dari wilayah kerja PPMA Papua.',
-                'kategori'  => 'Budaya',
                 'images'    => [
                     'danau-sentani.png',
                     'perahu-danau-sentani.png',
@@ -35,7 +34,6 @@ class GaleriSeeder extends Seeder
             [
                 'judul'     => 'Seni & Arsitektur Tradisional Papua',
                 'deskripsi' => 'Dokumentasi seni ukir, arsitektur tradisional, dan warisan budaya masyarakat adat Papua.',
-                'kategori'  => 'Budaya',
                 'images'    => [
                     'honai.png',
                     'rumah-adat.png',
@@ -45,7 +43,6 @@ class GaleriSeeder extends Seeder
             [
                 'judul'     => 'Kehidupan Masyarakat Adat Papua',
                 'deskripsi' => 'Kehidupan sehari-hari masyarakat kampung Papua yang menjadi sasaran program PPMA Papua.',
-                'kategori'  => 'Komunitas',
                 'images'    => [
                     'anak-anak-mendayung.png',
                 ],
@@ -56,7 +53,6 @@ class GaleriSeeder extends Seeder
             $galeri = Galeri::create([
                 'judul'     => $albumData['judul'],
                 'deskripsi' => $albumData['deskripsi'],
-                'kategori'  => $albumData['kategori'],
                 'user_id'   => $userId,
             ]);
 

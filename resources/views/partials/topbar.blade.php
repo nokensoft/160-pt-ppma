@@ -1,19 +1,8 @@
-{{-- Alert: Website dalam pengembangan --}}
-<div class="bg-amber-500 text-amber-950 text-lg font-semibold relative z-[61]" x-data="{ showAlert: true }" x-show="showAlert" x-transition>
-    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-center gap-2">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <span>Website ini masih dalam tahap pengembangan. Konten teks, gambar, dan link yang ditampilkan belum valid dan masih dalam proses pengerjaan.</span>
-        <button @click="showAlert = false" class="ml-3 hover:text-amber-800 transition-colors" title="Tutup">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
-</div>
-
-{{-- Topbar: Social Media | Clock | Language Switcher --}}
+{{-- Topbar: Social Media + Date/Time | Language Switcher --}}
 <div class="bg-neutral-900 text-neutral-400 text-lg hidden md:block relative z-[60]" id="topbar">
     <div class="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between">
 
-        {{-- Left: Social Media Links --}}
+        {{-- Left: Social Media Links + Realtime Date & Time --}}
         <div class="flex items-center gap-3">
             @if (!empty($situs['sosmed_facebook']))
                 <a href="{{ $situs['sosmed_facebook'] }}" target="_blank" rel="noopener" class="hover:text-white transition-colors" title="Facebook">
@@ -40,25 +29,20 @@
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
             @endif
-            @if (!empty($situs['email']))
-                <span class="text-neutral-700">|</span>
-                <a href="mailto:{{ $situs['email'] }}" class="hover:text-white transition-colors flex items-center gap-1.5" title="Email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>{{ $situs['email'] }}</span>
-                </a>
-            @endif
-        </div>
-
-        {{-- Right: Clock + Language Switcher --}}
-        <div class="flex items-center gap-4">
-
-            {{-- Realtime Date & Time --}}
+            <span class="text-neutral-700">|</span>
+            <span class="flex items-center gap-1.5 text-neutral-500">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="topbar-date">—</span>
+            </span>
+            <span class="text-neutral-700">•</span>
             <span class="flex items-center gap-1.5 text-neutral-500">
                 <i class="fa-regular fa-clock"></i>
-                <span id="topbar-clock">—</span>
+                <span id="topbar-time">—</span>
             </span>
+        </div>
 
-            <span class="text-neutral-700">|</span>
+        {{-- Right: Language Switcher + User --}}
+        <div class="flex items-center gap-4">
 
             {{-- Language Switcher --}}
             <div class="relative"
@@ -182,15 +166,17 @@
         }
     }
 
-    // Realtime clock
+    // Realtime date & time
     (function () {
-        const el = document.getElementById('topbar-clock');
-        if (!el) return;
+        const dateEl = document.getElementById('topbar-date');
+        const timeEl = document.getElementById('topbar-time');
+        if (!dateEl || !timeEl) return;
         function update() {
             const now = new Date();
-            el.textContent = now.toLocaleDateString('id-ID', {
+            dateEl.textContent = now.toLocaleDateString('id-ID', {
                 weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
-            }) + '  •  ' + now.toLocaleTimeString('id-ID', {
+            });
+            timeEl.textContent = now.toLocaleTimeString('id-ID', {
                 hour: '2-digit', minute: '2-digit', second: '2-digit'
             });
         }

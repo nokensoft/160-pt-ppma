@@ -39,7 +39,6 @@ class GaleriController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'kategori' => 'required|in:' . implode(',', Galeri::KATEGORI_LIST),
             'media_ids' => 'nullable|array',
             'media_ids.*' => 'exists:media,id',
         ]);
@@ -47,7 +46,6 @@ class GaleriController extends Controller
         $galeri = Galeri::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'kategori' => $request->kategori,
             'user_id' => session('user.id'),
         ]);
 
@@ -73,7 +71,6 @@ class GaleriController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'kategori' => 'required|in:' . implode(',', Galeri::KATEGORI_LIST),
             'media_ids' => 'nullable|array',
             'media_ids.*' => 'exists:media,id',
         ]);
@@ -81,7 +78,6 @@ class GaleriController extends Controller
         $galeri->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'kategori' => $request->kategori,
         ]);
 
         $galeri->media()->sync($request->media_ids ?? []);

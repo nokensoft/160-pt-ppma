@@ -10,7 +10,7 @@
             @csrf
             @if ($editMode) @method('PUT') @endif
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl">
+            <div class="max-w-4xl">
                 {{-- Judul --}}
                 <div>
                     <label class="text-lg font-bold uppercase text-gray-500 block mb-2">Judul Album</label>
@@ -18,18 +18,6 @@
                            class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition no-round"
                            placeholder="Judul album galeri">
                     @error('judul') <p class="text-red-500 text-lg mt-1">{{ $message }}</p> @enderror
-                </div>
-
-                {{-- Kategori --}}
-                <div>
-                    <label class="text-lg font-bold uppercase text-gray-500 block mb-2">Kategori</label>
-                    <select name="kategori" required class="w-full border border-gray-300 p-4 text-lg focus:border-primary focus:outline-none transition bg-white no-round">
-                        <option value="">Pilih Kategori</option>
-                        @foreach (\App\Models\Galeri::KATEGORI_LIST as $kat)
-                            <option value="{{ $kat }}" {{ old('kategori', $editMode ? $galeri->kategori : '') === $kat ? 'selected' : '' }}>{{ $kat }}</option>
-                        @endforeach
-                    </select>
-                    @error('kategori') <p class="text-red-500 text-lg mt-1">{{ $message }}</p> @enderror
                 </div>
             </div>
 
@@ -69,7 +57,7 @@
                                 @if ($m->tipe === 'video')
                                     <div class="relative">
                                         <img src="https://img.youtube.com/vi/{{ $m->file_name }}/mqdefault.jpg" alt="{{ $m->judul }}"
-                                             class="w-full h-28 object-cover"
+                                             class="w-full h-full object-cover"
                                              onerror="this.src='https://img.youtube.com/vi/default/mqdefault.jpg'">
                                         <div class="absolute inset-0 flex items-center justify-center">
                                             <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center shadow">
@@ -79,7 +67,7 @@
                                     </div>
                                 @else
                                     <img src="{{ asset('storage/' . $m->file_path) }}" alt="{{ $m->judul }}"
-                                         class="w-full h-28 object-cover">
+                                         class="w-full h-full object-cover">
                                 @endif
                                 <div class="p-2">
                                     <p class="text-lg font-semibold text-gray-700 truncate">{{ $m->judul }}</p>

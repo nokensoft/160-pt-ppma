@@ -241,7 +241,6 @@
                     <ol class="list-decimal list-inside space-y-1">
                         <li>Klik <strong>Tambah Galeri</strong></li>
                         <li>Isi <strong>Judul Album</strong></li>
-                        <li>Pilih <strong>Kategori</strong>: Kegiatan, Budaya, Komunitas, Program, atau Lainnya</li>
                         <li>Isi <strong>Deskripsi</strong> (opsional)</li>
                         <li>Pilih <strong>media</strong> (foto/video) yang ingin dimasukkan ke album — gunakan klik untuk memilih/membatalkan, bisa pilih banyak sekaligus</li>
                         <li>Klik <strong>Simpan</strong></li>

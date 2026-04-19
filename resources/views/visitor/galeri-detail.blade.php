@@ -23,38 +23,34 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
 @section('content')
     @include('partials.page-banner', [
         'title' => $galeri->judul,
-        'breadcrumb' => '<a href="' . route('galeri') . '" class="hover:text-white transition">Galeri</a> / ' . $galeri->judul
+        'breadcrumb' => '<a href="' . route('galeri') . '" class="hover:text-white transition">Galeri</a> / ' . $galeri->judul,
+        'rightAction' => '<a href="' . route('galeri') . '" class="inline-flex items-center gap-2 text-white hover:text-primary transition font-semibold"><i class="fas fa-arrow-left"></i>Kembali</a>'
     ])
 
     <section class="py-20 bg-white" x-data="galeriLightbox()">
         <div class="container mx-auto px-4">
             <!-- Header -->
             <div class="mb-10">
-                <a href="{{ route('galeri') }}" class="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-4 transition">
-                    <i class="fas fa-arrow-left mr-2"></i>Kembali ke Galeri
-                </a>
-                <div class="flex flex-wrap items-center gap-3 mb-3">
-                    <h3 class="text-3xl font-extrabold text-dark">{{ $galeri->judul }}</h3>
-                    <span class="bg-primary/10 text-primary text-lg font-bold px-3 py-1 rounded-full">{{ $galeri->kategori }}</span>
-                </div>
                 @php
                     $fotoCount = $galeri->media->where('tipe', 'foto')->count();
                     $videoCount = $galeri->media->where('tipe', 'video')->count();
                 @endphp
-                <p class="text-gray-400 text-lg my-2">
-                    @if ($fotoCount > 0)
-                        <i class="fas fa-image mr-1"></i>{{ $fotoCount }} Foto
+                <div class="rounded-none border border-gray-200 bg-gray-50 p-5 md:p-6">
+                    <h3 class="text-3xl font-extrabold text-dark">{{ $galeri->judul }}</h3>
+                    @if ($galeri->deskripsi)
+                        <p class="text-gray-500 mt-3">{{ $galeri->deskripsi }}</p>
                     @endif
-                    @if ($fotoCount > 0 && $videoCount > 0)
-                        <span class="mx-1">&middot;</span>
-                    @endif
-                    @if ($videoCount > 0)
-                        <i class="fab fa-youtube mr-1"></i>{{ $videoCount }} Video
-                    @endif
-                </p>
-                @if ($galeri->deskripsi)
-                    <p class="text-gray-500">{{ $galeri->deskripsi }}</p>
-                @endif
+                    <div class="mt-4 flex flex-wrap items-center gap-3">
+                        <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm md:text-base font-bold px-3 py-1.5 rounded-none">
+                            <i class="fas fa-image"></i>{{ $fotoCount }} Foto
+                        </span>
+                        @if ($videoCount > 0)
+                            <span class="inline-flex items-center gap-2 bg-red-50 text-red-600 text-sm md:text-base font-semibold px-3 py-1.5 rounded-none">
+                                <i class="fab fa-youtube"></i>{{ $videoCount }} Video
+                            </span>
+                        @endif
+                    </div>
+                </div>
             </div>
 
             <!-- Media Grid -->
@@ -62,22 +58,22 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                 @forelse ($galeri->media as $index => $m)
                     @if ($m->tipe === 'video')
                         <div @click="open({{ $index }})"
-                             class="relative group overflow-hidden rounded-lg cursor-pointer">
+                             class="relative group overflow-hidden rounded-none cursor-pointer aspect-[4/3]">
                             <img src="https://img.youtube.com/vi/{{ $m->file_name }}/hqdefault.jpg"
-                                 class="w-full h-52 object-cover group-hover:scale-110 transition duration-500"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                                  alt="{{ $galeri->judul }} - Video {{ $index + 1 }}">
                             <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/50 transition flex items-center justify-center">
                                 <span class="bg-red-600/90 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
                                     <i class="fas fa-play text-lg ml-0.5"></i>
                                 </span>
                             </div>
-                            <span class="absolute bottom-2 left-2 bg-red-600 text-white text-lg font-bold px-2 py-0.5 rounded">
+                            <span class="absolute bottom-2 left-2 bg-red-600 text-white text-sm font-bold px-2 py-0.5 rounded-none">
                                 <i class="fab fa-youtube mr-1"></i>Video
                             </span>
                         </div>
                     @else
                         <div @click="open({{ $index }})"
-                             class="relative group overflow-hidden rounded-lg cursor-pointer">
+                             class="relative group overflow-hidden rounded-none cursor-pointer aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('storage/' . $m->file_path) }}"
                                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                                  alt="{{ $galeri->judul }} - Foto {{ $index + 1 }}"
@@ -99,21 +95,21 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
             <!-- Share Buttons -->
             <div class="mt-8 flex flex-wrap gap-3" x-data="{ copied: false }">
                 <button @click="navigator.clipboard.writeText('{{ route('galeri.detail', $galeri->slug) }}'); copied = true; setTimeout(() => copied = false, 2000)"
-                        class="flex items-center gap-2 px-4 py-2.5 border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition text-lg font-semibold rounded-lg">
-                    <i class="fas" :class="copied ? 'fa-check' : 'fa-link'"></i>
+                        class="flex items-center gap-2 px-3 py-2 border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition text-sm font-semibold rounded-none">
+                    <i class="fas text-xs" :class="copied ? 'fa-check' : 'fa-link'"></i>
                     <span x-text="copied ? 'Tersalin!' : 'Salin URL'"></span>
                 </button>
                 <a href="https://twitter.com/intent/tweet?url={{ urlencode(route('galeri.detail', $galeri->slug)) }}&text={{ urlencode($galeri->judul) }}" target="_blank"
-                   class="flex items-center gap-2 px-4 py-2.5 bg-black text-white hover:bg-gray-800 transition text-lg font-semibold rounded-lg">
-                    <i class="fab fa-x-twitter"></i> Post
+                   class="flex items-center gap-2 px-3 py-2 bg-black text-white hover:bg-gray-800 transition text-sm font-semibold rounded-none">
+                    <i class="fab fa-x-twitter text-xs"></i> Post
                 </a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('galeri.detail', $galeri->slug)) }}" target="_blank"
-                   class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 text-white hover:bg-blue-700 transition text-lg font-semibold rounded-lg">
-                    <i class="fab fa-facebook-f"></i> Share
+                   class="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 transition text-sm font-semibold rounded-none">
+                    <i class="fab fa-facebook-f text-xs"></i> Share
                 </a>
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(route('galeri.detail', $galeri->slug)) }}" target="_blank"
-                   class="flex items-center gap-2 px-4 py-2.5 bg-sky-700 text-white hover:bg-sky-800 transition text-lg font-semibold rounded-lg">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                   class="flex items-center gap-2 px-3 py-2 bg-sky-700 text-white hover:bg-sky-800 transition text-sm font-semibold rounded-none">
+                    <i class="fab fa-linkedin-in text-xs"></i> LinkedIn
                 </a>
             </div>
 

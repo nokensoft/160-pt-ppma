@@ -94,13 +94,6 @@ class VisitorController extends Controller
     {
         $query = Galeri::withCount('media')->where('is_publik', true)->latest();
 
-        $kategoriAktif = request('kategori');
-        if ($kategoriAktif && in_array($kategoriAktif, Galeri::KATEGORI_LIST)) {
-            $query->where('kategori', $kategoriAktif);
-        } else {
-            $kategoriAktif = null;
-        }
-
         if (request('cari')) {
             $query->where(function ($q) {
                 $q->where('judul', 'like', '%' . request('cari') . '%')
@@ -112,16 +105,7 @@ class VisitorController extends Controller
 
         // Load first media for cover image
         $galeriList->load(['media' => fn ($q) => $q->limit(1)]);
-
-        // Category list with counts (for sidebar)
-        $kategoriListSidebar = collect(Galeri::KATEGORI_LIST)->map(function ($kat) {
-            return [
-                'nama' => $kat,
-                'jumlah' => Galeri::where('is_publik', true)->where('kategori', $kat)->count(),
-            ];
-        });
-
-        return view('visitor.galeri', compact('galeriList', 'kategoriAktif', 'kategoriListSidebar'));
+        return view('visitor.galeri', compact('galeriList'));
     }
 
     public function galeriDetail(string $slug)
