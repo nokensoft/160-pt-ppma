@@ -58,7 +58,7 @@ if ($kategoriAktif) {
                         @forelse ($beritaList as $b)
                             <a href="{{ route('berita.detail', $b->slug) }}" class="group cursor-pointer fade-in block">
                                 <div class="relative overflow-hidden bg-gray-100 mb-6 shadow-md">
-                                    <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                                    <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105">
                                 </div>
                                 <div class="space-y-3">
                                     <h3 class="text-xl font-bold leading-snug group-hover:text-secondary transition line-clamp-2">{{ $b->judul }}</h3>
@@ -70,7 +70,7 @@ if ($kategoriAktif) {
                         @empty
                             <div class="col-span-full text-center py-12 text-neutral-400">
                                 <i class="fa-solid fa-newspaper text-4xl mb-3 block"></i>
-                                <p>Belum ada berita.</p>
+                                <p>Tidak ada postingan.</p>
                             </div>
                         @endforelse
                     </div>

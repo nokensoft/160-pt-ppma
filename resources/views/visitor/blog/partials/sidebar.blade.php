@@ -6,10 +6,10 @@
 
 <div class="space-y-6 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start">
     <div class="bg-neutral-50 p-6 rounded-lg">
-        <h4 class="font-display font-bold text-lg uppercase mb-4 pb-3 border-b-2 border-secondary">Cari Berita</h4>
+        <h4 class="font-display font-bold text-lg uppercase mb-4 pb-3 border-b-2 border-secondary">Cari</h4>
         <form method="GET" action="{{ $searchAction }}">
             <div class="relative">
-                <input type="text" name="cari" value="{{ request('cari') }}" placeholder="Cari berita..."
+                <input type="text" name="cari" value="{{ request('cari') }}" placeholder="Tulis kata kunci..."
                        class="w-full border border-neutral-300 p-3 pr-10 text-lg focus:border-secondary focus:outline-none transition">
                 <button type="submit" class="absolute right-0 top-0 h-full px-3 text-neutral-400 hover:text-secondary transition">
                     <i class="fa-solid fa-search text-lg"></i>
@@ -38,8 +38,8 @@
     @endif
 
 
-    <a href="{{ route('berita') }}"
+    <a href="{{ route('beranda') }}"
        class="{{ $isSemuaBeritaActive ? 'bg-secondary' : 'bg-neutral-800' }} text-white p-4 block hover:bg-secondary transition text-center">
-        <span class="font-semibold text-lg uppercase">Semua Berita</span>
+        <span class="font-semibold text-lg uppercase">Kembali ke Beranda</span>
     </a>
 </div>

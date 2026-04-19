@@ -30,14 +30,14 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                     <div class="h-1 w-20 bg-primary mt-4"></div>
                 </div>
                 <a href="{{ route('berita') }}" class="text-primary font-bold uppercase tracking-widest text-lg border-b-2 border-primary hover:text-secondary hover:border-secondary transition pb-1">
-                    Lihat Semua Artikel <i class="fa-solid fa-arrow-right ml-2 text-lg"></i>
+                    Tampilkan Semua <i class="fa-solid fa-arrow-right ml-2 text-lg"></i>
                 </a>
             </div>
             <div class="grid md:grid-cols-3 gap-10">
                 @forelse ($beritaTerbaru as $b)
                     <a href="{{ route('berita.detail', $b->slug) }}" class="group cursor-pointer fade-in block">
                         <div class="relative overflow-hidden bg-gray-100 mb-6 shadow-md">
-                            <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105">
+                            <img src="{{ $b->gambar }}" alt="{{ $b->judul }}" class="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105">
                             {{-- @if ($b->kategori)
                                 <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-lg font-bold uppercase tracking-tighter">{{ $b->kategori->nama }}</div>
                             @endif --}}
