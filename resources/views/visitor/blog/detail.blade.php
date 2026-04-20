@@ -115,7 +115,7 @@ $_f = JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE;
                                         <img src="{{ $bl->gambar }}" class="w-full h-48 object-cover" alt="{{ $bl->judul }}">
                                         <div class="p-4">
                                             <h5 class="text-lg font-bold line-clamp-2">{{ $bl->judul }}</h5>
-                                            <p class="text-lg text-neutral-400 mt-1">{{ $bl->tanggal_terbit?->translatedFormat('d M Y') }}</p>
+                                            {{-- <p class="text-lg text-neutral-400 mt-1">{{ $bl->tanggal_terbit?->translatedFormat('d M Y') }}</p> --}}
                                         </div>
                                     </a>
                                 @endforeach

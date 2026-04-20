@@ -17,7 +17,8 @@ class VisitorController extends Controller
     {
         $beritaTerbaru = Berita::with('kategori', 'media')
             ->where('status', 'terbit')
-            ->latest('tanggal_terbit')
+            ->orderByDesc('tanggal_terbit')
+            ->orderByDesc('id')
             ->take(3)
             ->get();
 
@@ -38,8 +39,14 @@ class VisitorController extends Controller
             });
         }
 
-        $beritaList = $query->latest('tanggal_terbit')->paginate(9)->withQueryString();
-        $kategoriList = KategoriBerita::withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])->get();
+        $beritaList = $query
+            ->orderByDesc('tanggal_terbit')
+            ->orderByDesc('id')
+            ->paginate(9)
+            ->withQueryString();
+        $kategoriList = KategoriBerita::whereHas('berita', fn ($q) => $q->where('status', 'terbit'))
+            ->withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])
+            ->get();
         $kategoriAktif = null;
 
         return view('visitor.blog.index', compact('beritaList', 'kategoriList', 'kategoriAktif'));
@@ -60,8 +67,14 @@ class VisitorController extends Controller
             });
         }
 
-        $beritaList = $query->latest('tanggal_terbit')->paginate(9)->withQueryString();
-        $kategoriList = KategoriBerita::withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])->get();
+        $beritaList = $query
+            ->orderByDesc('tanggal_terbit')
+            ->orderByDesc('id')
+            ->paginate(9)
+            ->withQueryString();
+        $kategoriList = KategoriBerita::whereHas('berita', fn ($q) => $q->where('status', 'terbit'))
+            ->withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])
+            ->get();
 
         return view('visitor.blog.index', compact('beritaList', 'kategoriList', 'kategoriAktif'));
     }
@@ -76,7 +89,9 @@ class VisitorController extends Controller
         $kategoriAktif = $berita->kategori;
 
         $berita->increment('jumlah_dibaca');
-        $kategoriList = KategoriBerita::withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])->get();
+        $kategoriList = KategoriBerita::whereHas('berita', fn ($q) => $q->where('status', 'terbit'))
+            ->withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])
+            ->get();
 
         $beritaTerkait = Berita::with('kategori', 'media')
             ->where('status', 'terbit')
@@ -84,7 +99,8 @@ class VisitorController extends Controller
             ->when($berita->kategori_berita_id, function ($q) use ($berita) {
                 $q->where('kategori_berita_id', $berita->kategori_berita_id);
             })
-            ->latest('tanggal_terbit')
+            ->orderByDesc('tanggal_terbit')
+            ->orderByDesc('id')
             ->take(2)
             ->get();
         return view('visitor.blog.detail', compact('berita', 'beritaTerkait', 'kategoriList', 'kategoriAktif'));
@@ -201,7 +217,8 @@ class VisitorController extends Controller
             ->withCount(['berita' => fn ($q) => $q->where('status', 'terbit')])
             ->get();
         $beritaTerbaru = Berita::where('status', 'terbit')
-            ->latest('tanggal_terbit')
+            ->orderByDesc('tanggal_terbit')
+            ->orderByDesc('id')
             ->take(20)
             ->get();
         $galeriTerbaru = Galeri::latest()->take(20)->get();
